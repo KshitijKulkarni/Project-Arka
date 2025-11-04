@@ -11,6 +11,14 @@ qt6_add_qml_module(UntitledProjectContent
     QML_FILES
         "App.qml"
         "Screen01.ui.qml"
+    RESOURCES
+        "images/BGNew.png"
+        "images/Fan Blades.png"
+        "images/Fan Core.png"
+        "images/L.png"
+        "images/M.png"
+        "images/S.png"
+        "images/Signboard.png"
 )
 
 
