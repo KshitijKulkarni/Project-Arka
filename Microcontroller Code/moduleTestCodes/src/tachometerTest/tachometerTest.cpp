@@ -1,7 +1,9 @@
+int inputPin = 2;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  pinMode(A9, INPUT);
+  pinMode(inputPin, INPUT);
 }
 
 bool pulseDone = false;
@@ -13,12 +15,12 @@ void loop() {
   int starttime = millis();
   while (millis() - starttime < 100) {
     if (!pulseDone) {
-      if (analogRead(A9) < 100) {
+      if (digitalRead(inputPin) == HIGH) {
         pulseCount++;
         pulseDone = true;
       }
     } else {
-      if (analogRead(A9) > 100)
+      if (digitalRead(inputPin) == LOW)
         pulseDone = false;
     }
   }
