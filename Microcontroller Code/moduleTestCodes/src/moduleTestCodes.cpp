@@ -1,10 +1,10 @@
 #include <Arduino.h>
-#include "src/ESPcomms/ESPcomms.h"
+#include "ESPcomms.h"
 
 int main() {
   // Example usage
 
-  init()
+  init();
 
   ESPComms espComms(0x42); // Example I2C address
   espComms.begin(100000); // Start I2C at 400kHz

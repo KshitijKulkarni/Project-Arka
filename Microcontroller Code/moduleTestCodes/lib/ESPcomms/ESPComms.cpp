@@ -12,12 +12,12 @@
 #include <Arduino.h>
 #include "ESPComms.h"  
 
-#define BUFFER_SIZE 32; //sendData function depends on this being a multiple of 32
+#define BUFFER_SIZE 32 //sendData function depends on this being a multiple of 32
 
 class ESPComms {
     public:
         ESPComms(int ESPadress);
-        void begin();
+        void begin(int frequency);
         int resetBuffer();
         int appendBuffer(uint8_t byte);
         int sendData();
@@ -43,7 +43,8 @@ int ESPComms::resetBuffer() {
 int ESPComms::appendBuffer(uint8_t byte) {
     if (_bufferIndex < BUFFER_SIZE) {
         _buffer[_bufferIndex++] = byte;
-        return (_bufferIndex < BUFFER_SIZE) ? 0 : 1; // 0 = success, 1 = buffer full
+        if (_bufferIndex < BUFFER_SIZE) return 0;
+        else return 1; // 0 = success, 1 = buffer full
     } else {
         return -1; // Buffer overflow
     }
