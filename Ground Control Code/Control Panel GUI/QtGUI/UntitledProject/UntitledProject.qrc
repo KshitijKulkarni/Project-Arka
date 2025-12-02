@@ -1,0 +1,19 @@
+<RCC>
+    <qresource>
+        <file>qtquickcontrols2.conf</file>
+        <file>UntitledProject.qmlproject</file>
+        <file>UntitledProject/Constants.qml</file>
+        <file>UntitledProject/EventListModel.qml</file>
+        <file>UntitledProject/EventListSimulator.qml</file>
+        <file>UntitledProject/qmldir</file>
+        <file>UntitledProjectContent/App.qml</file>
+        <file>UntitledProjectContent/images/BGNew.png</file>
+        <file>UntitledProjectContent/images/Fan Blades.png</file>
+        <file>UntitledProjectContent/images/Fan Core.png</file>
+        <file>UntitledProjectContent/images/L.png</file>
+        <file>UntitledProjectContent/images/M.png</file>
+        <file>UntitledProjectContent/images/S.png</file>
+        <file>UntitledProjectContent/images/Signboard.png</file>
+        <file>UntitledProjectContent/Screen01.ui.qml</file>
+    </qresource>
+</RCC>

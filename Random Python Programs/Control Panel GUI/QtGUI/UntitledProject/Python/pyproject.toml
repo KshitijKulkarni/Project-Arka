@@ -1,5 +1,0 @@
-[project]
-name = "UntitledProject"
-
-[tool.pyside6-project]
-files = ["main.py", "autogen/settings.py"]

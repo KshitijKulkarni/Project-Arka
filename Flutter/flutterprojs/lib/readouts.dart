@@ -1,0 +1,108 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_glow/flutter_glow.dart';
+import 'package:flutterprojs/serial_backend.dart';
+import 'package:provider/provider.dart';
+import 'colortheme.dart';
+
+class Readouts extends StatefulWidget {
+  const Readouts({super.key});
+
+  @override
+  State<Readouts> createState() => _ReadoutsState();
+}
+
+class _ReadoutsState extends State<Readouts> {
+  @override
+  Widget build(BuildContext context) {
+    final backend = Provider.of<SerialBackend>(context);
+    return Column(
+      spacing: 0,
+      children: [
+        SizedBox(height: 23),
+        GlowText(
+          "Fuel Flow",
+          style: TextStyle(
+            fontFamily: "Infynite",
+            color: yel,
+            fontSize: 25,
+            height: 0.8,
+          ),
+        ),
+        GlowText(
+          "ml/min",
+          style: TextStyle(
+            fontFamily: "Infynite",
+            color: yel.withAlpha(200),
+            fontSize: 17,
+          ),
+        ),
+        SizedBox(height: 20),
+        GlowText(
+          backend.dataChunk.currentFlowRate.toString(),
+          style: TextStyle(
+            fontFamily: "Infynite",
+            color: yel,
+            fontSize: 50,
+            height: 0.8,
+          ),
+        ),
+        GlowText(
+          backend.dataChunk.targetFlowRate.toString(),
+          style: TextStyle(fontFamily: "Infynite", color: grn, fontSize: 25),
+        ),
+
+        Spacer(),
+        Row(
+          children: [
+            SizedBox(width: 10),
+            SizedBox(
+              width: 85,
+              height: 90,
+              child: Center(
+                child: Column(
+                  children: [
+                    SizedBox(height: 3,),
+                    GlowText(
+                      "Thrust",
+                      style: TextStyle(
+                        fontFamily: "Infynite",
+                        color: yel,
+                        fontSize: 18,
+                      ),
+                    ),
+                    GlowText(
+                      backend.dataChunk.engineThrust.toString(),
+                      style: TextStyle(
+                        fontFamily: "Infynite",
+                        color: yel,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Spacer(),
+            SizedBox(
+              width: 85,
+              height: 90,
+              child: Center(
+                child: GlowText(
+                  "!",
+                  style: TextStyle(
+                    fontFamily: "Infynite",
+                    color: yel,
+                    fontSize: 25,
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(width: 8),
+          ],
+        ),
+        SizedBox(height: 10),
+      ],
+    );
+  }
+}
