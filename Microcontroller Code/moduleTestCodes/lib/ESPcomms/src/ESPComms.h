@@ -8,7 +8,7 @@
 
 class ESPComms {
     public:
-        ESPComms(int ESPaddress);
+        ESPComms(int ESPadress);
         void begin(int frequency);
         int resetBuffer();
         int appendBuffer(uint8_t byte);

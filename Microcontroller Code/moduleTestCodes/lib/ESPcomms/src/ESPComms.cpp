@@ -14,19 +14,6 @@
 
 #define BUFFER_SIZE 32 //sendData function depends on this being a multiple of 32
 
-class ESPComms {
-    public:
-        ESPComms(int ESPadress);
-        void begin(int frequency);
-        int resetBuffer();
-        int appendBuffer(uint8_t byte);
-        int sendData();
-    private:
-        int _ESPaddress;
-        uint8_t _buffer[BUFFER_SIZE];
-        int _bufferIndex;
-};
-
 ESPComms::ESPComms(int ESPaddress)
     : _ESPaddress(ESPaddress) {}
 

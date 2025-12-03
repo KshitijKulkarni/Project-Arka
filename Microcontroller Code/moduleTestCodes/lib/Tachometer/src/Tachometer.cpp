@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "ESPcomms.h"
+#include "ESPComms.h"
 
 /*
   Tachometer class to read RPM from a tachometer signal.

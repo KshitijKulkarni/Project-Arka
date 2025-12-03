@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include "ESPcomms.h"
 
-int main() {
+int main(void) {
   // Example usage
-
+  
   init();
 
   ESPComms espComms(0x42); // Example I2C address
@@ -21,9 +21,11 @@ int main() {
       }
     }
     
-    int sendResult = espComms.sendData();
+    espComms.sendData();
     // Handle sendResult as needed
     delay(1000); // Wait before next transmission
+
+    yield()
   }
 
   return 0;

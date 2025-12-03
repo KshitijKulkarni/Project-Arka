@@ -2,7 +2,7 @@
 #define TACHOMETER_H
 
 #include <Arduino.h>
-#include "ESPcomms.h"
+#include "ESPComms.h"
 
 class Tachometer {
     public:
