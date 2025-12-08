@@ -12,8 +12,6 @@
 #include <Arduino.h>
 #include "ESPComms.h"  
 
-#define BUFFER_SIZE 32 //sendData function depends on this being a multiple of 32
-
 ESPComms::ESPComms(int ESPaddress)
     : _ESPaddress(ESPaddress) {}
 
@@ -22,19 +20,43 @@ void ESPComms::begin(int frequency) {
     Wire.setClock(frequency);
 }
 
-int ESPComms::resetBuffer() {
-    _bufferIndex = 0;
-    return 0; // success
+
+int ESPComms::addBuffer(uint8_t data, uint8_t id) {
+    switch (id) {
+        case 0xA0:
+            _buffer.rpm = data;
+            break;
+        case 0xC0:
+            _buffer.flow = data;
+            break;
+        default:
+            return -1; // Invalid ID
+    }
+    return 0; // Success
 }
 
-int ESPComms::appendBuffer(uint8_t byte) {
-    if (_bufferIndex < BUFFER_SIZE) {
-        _buffer[_bufferIndex++] = byte;
-        if (_bufferIndex < BUFFER_SIZE) return 0;
-        else return 1; // 0 = success, 1 = buffer full
-    } else {
-        return -1; // Buffer overflow
+int ESPComms::addBuffer(uint16_t data, uint8_t id) {
+    switch (id) {
+        case 0xB0:
+            _buffer.thrust = data;
+            break;
+        default:
+            return -1; // Invalid ID
     }
+    return 0; // Success
+}
+int ESPComms::addBuffer(uint16_t data, uint8_t id, uint8_t index) {
+    switch (id) {
+        case 0xD0:
+            _buffer.pressure[index] = data;
+            break;
+        case 0xE0:
+            _buffer.temperature[index] = data;
+            break;
+        default:
+            return -1; // Invalid ID
+    }
+    return 0;
 }
 
 int ESPComms::sendData() {
@@ -49,16 +71,8 @@ int ESPComms::sendData() {
     int success = 0;
     
     Wire.beginTransmission(_ESPaddress);
-    for (int i = 0; i < BUFFER_SIZE/32; i++) {
-        Wire.write(_buffer + (i*32), 32);
-        if (i < (BUFFER_SIZE/32 - 1)) success = Wire.endTransmission(false);
-        else success = Wire.endTransmission(true);
-        if (success != 0) {
-            return success; // Return error code if transmission failed
-        }
-    }
-
-    _bufferIndex = 0; // Reset buffer index after sending
+    Wire.write((uint8_t*)&_buffer, sizeof(_buffer));
+    success = Wire.endTransmission();
     return success;
 }
 

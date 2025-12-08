@@ -9,14 +9,10 @@
 */
 
 class Tachometer{
-  public:
-    Tachometer(ESPComms* commsHandler) {
-      _commsHandler = commsHandler;
-      _commsID = 0x01; // Example ID
-    };
-    void begin();
-    int readRPM();
-    volatile int pulseCount; //directly modified by an interrupt
+  
+  void begin();
+  int readRPM();
+  volatile int pulseCount; //directly modified by an interrupt
 
   private:
     volatile long int _lastPulseTime;
@@ -36,8 +32,7 @@ int Tachometer::readRPM() {
   _lastPulseTime = millis();
   pulseCount = 0; // Reset pulse count after reading
 
-  int success = _commsHandler->appendBuffer(_commsID);
-  if (success == 0) success = _commsHandler->appendBuffer(rpm); // High byte
+  int success = _commsHandler->addBuffer(rpm, _commsID); // High byte
   return success;
 }
 
