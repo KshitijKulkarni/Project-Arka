@@ -21,10 +21,9 @@ struct SendBuffer {
 
 class RemoteComms {
    public:
-    RemoteComms();
-    void begin(const uint8_t* peerMac);
-    bool sendData(const SendBuffer* data);
-    void getData(RecieveBuffer* data);
+    static void begin(const uint8_t* peerMac);
+    static bool sendData(const SendBuffer* data);
+    static void getData(RecieveBuffer* data);
 
     static bool dataAvailable;
 
