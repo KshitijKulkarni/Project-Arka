@@ -1,9 +1,13 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int main(void) {
-    init();
-    while (1) {
-        yield();
-    }
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  Serial.println("Hello, ESP32!");
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  Serial.println("Looping...");
+  delay(1000);
 }
