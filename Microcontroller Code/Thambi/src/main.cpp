@@ -26,15 +26,11 @@ void loop()
   if (I2CComms::dataAvailable) {
     I2CComms::getData(&dataPacket);
     RemoteComms::sendData(&dataPacket);
-    Serial.println("Data sent over RemoteComms");
-    Serial.print("RPM: "); Serial.println(dataPacket.rpm);
   }
 
   if (RemoteComms::dataAvailable) {
     RemoteComms::getDirective(&directivePacket);
     I2CComms::updateDirective(&directivePacket);
-    Serial.println("Directive sent over I2CComms");
-    Serial.print("Throttle: "); Serial.println(directivePacket.value);
-    digitalWrite(I2C_BUFFER_PIN, HIGH);
+    Serial.println(directivePacket.id);
   }
 }

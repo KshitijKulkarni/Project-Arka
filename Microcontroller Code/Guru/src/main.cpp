@@ -25,16 +25,8 @@ int main(void) {
     Serial.write("Data sent to ESP\n");
     // Handle sendResult as needed
     delay(100); // Wait before next transmission
-    if (digitalRead(I2C_DATA_RECEIVE) == HIGH) {
-        espComms.getData(&directive);
-        Serial.write("Received Directive from ESP:\n");
-        Serial.write("ID: ");
-        Serial.write(directive.id);
-        Serial.write("\nValue: ");
-        Serial.write((uint8_t)(directive.value >> 8)); // High byte
-        Serial.write((uint8_t)(directive.value & 0xFF)); // Low byte
-        Serial.write("\n");
-    }
+    espComms.getData(&directive);
+    Serial.write(directive.id);
 
     yield();
   }

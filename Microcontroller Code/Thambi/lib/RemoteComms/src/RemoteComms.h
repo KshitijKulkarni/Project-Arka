@@ -9,7 +9,7 @@
 class RemoteComms {
    public:
     static void begin(const uint8_t* peerMac);
-    static bool sendData(const Gyan* data);
+    static int sendData(const Gyan* data);
     static void getDirective(Directive* data);
 
     static bool dataAvailable;

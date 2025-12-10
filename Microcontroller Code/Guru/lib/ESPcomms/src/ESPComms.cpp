@@ -78,8 +78,8 @@ int ESPComms::sendData() {
 
 void ESPComms::getData(Directive* directive) {
     Wire.requestFrom(_ESPaddress, sizeof(Directive));
-    if (Wire.available() >= sizeof(Directive)) {
-        Wire.readBytes((char*)directive, sizeof(Directive));
+    if (Wire.available() > 0) {
+        Wire.readBytes((uint8_t*)directive, sizeof(Directive));
     }
 }
 

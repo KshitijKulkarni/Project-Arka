@@ -20,11 +20,13 @@ void RemoteComms::begin(const uint8_t* peerMac) {
     esp_now_register_recv_cb(&RemoteComms::onDataRecv);
 
     esp_now_peer_info_t peerInfo;
+    memset(&peerInfo, 0, sizeof(peerInfo));
     memcpy(peerInfo.peer_addr, peerMac, 6);
+    peerInfo.ifidx = WIFI_IF_STA;
     peerInfo.channel = 0;
     peerInfo.encrypt = false;
 
-    esp_now_add_peer(&peerInfo);
+    Serial.print(esp_now_add_peer(&peerInfo));
 }
 
 void RemoteComms::onDataRecv(const uint8_t* mac, const uint8_t* incomingData, int len) {
@@ -42,13 +44,14 @@ void RemoteComms::getDirective(Directive* data) {
     }
 }
 
-bool RemoteComms::sendData(const Gyan* data) {
+int RemoteComms::sendData(const Gyan* data) {
     esp_err_t result = esp_now_send(RemoteComms::_peerMac, (uint8_t *)data, sizeof(Gyan));
     if (result == ESP_OK) {
-        return true;
+        return 0;
     }
 
     else {
-        return false;
+        Serial.print(esp_err_to_name(result));
+        return 1;
     }
 }
