@@ -24,8 +24,21 @@ void loop() {
   
   if (RemoteComms::dataAvailable) {
     RemoteComms::getData(&recvData);
+    sendData.status = 1; // Example status
+    sendData.rpm = recvData.rpm;
+    sendData.thrust = recvData.thrust;
+    sendData.currFlow = recvData.flow;
+    sendData.setFlow = 150; // Example set flow
+    for (int i = 0; i < 5; i++) {
+      sendData.pressure[i] = recvData.pressure[i];
+    }
+    for (int i = 0; i < 9; i++) {
+      sendData.temperature[i] = recvData.temperature[i];
+    }
   }
   
+
+
   if (Serial.available()) {
     if (Serial.read() == 0x61) {
       LocalComms::sendData(&sendData);

@@ -33,6 +33,8 @@ void loop()
   if (RemoteComms::dataAvailable) {
     RemoteComms::getDirective(&directivePacket);
     I2CComms::updateDirective(&directivePacket);
+    Serial.println("Directive sent over I2CComms");
+    Serial.print("Throttle: "); Serial.println(directivePacket.value);
     digitalWrite(I2C_BUFFER_PIN, HIGH);
   }
 }
