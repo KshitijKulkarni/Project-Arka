@@ -38,7 +38,7 @@ class _ReadoutsState extends State<Readouts> {
         ),
         SizedBox(height: 20),
         GlowText(
-          backend.dataChunk.currentFlowRate.toString(),
+          backend.dataChunk['currentFlow']!.toString(),
           style: TextStyle(
             fontFamily: "Infynite",
             color: yel,
@@ -47,7 +47,7 @@ class _ReadoutsState extends State<Readouts> {
           ),
         ),
         GlowText(
-          backend.dataChunk.targetFlowRate.toString(),
+          backend.dataChunk['targetFlow']!.toString(),
           style: TextStyle(fontFamily: "Infynite", color: grn, fontSize: 25),
         ),
 
@@ -71,7 +71,7 @@ class _ReadoutsState extends State<Readouts> {
                       ),
                     ),
                     GlowText(
-                      backend.dataChunk.engineThrust.toString(),
+                      backend.dataChunk['thrust']!.toString(),
                       style: TextStyle(
                         fontFamily: "Infynite",
                         color: yel,
