@@ -61,7 +61,7 @@ class _ReadoutsState extends State<Readouts> {
               child: Center(
                 child: Column(
                   children: [
-                    SizedBox(height: 3,),
+                    SizedBox(height: 5,),
                     GlowText(
                       "Thrust",
                       style: TextStyle(
@@ -87,13 +87,26 @@ class _ReadoutsState extends State<Readouts> {
               width: 85,
               height: 90,
               child: Center(
-                child: GlowText(
-                  "!",
-                  style: TextStyle(
-                    fontFamily: "Infynite",
-                    color: yel,
-                    fontSize: 25,
-                  ),
+                child: Column(
+                  children: [
+                    SizedBox(height: 5,),
+                    GlowText(
+                      "Speed",
+                      style: TextStyle(
+                        fontFamily: "Infynite",
+                        color: yel,
+                        fontSize: 18,
+                      ),
+                    ),
+                    GlowText(
+                      backend.dataChunk['rp100ms']!.toString(),
+                      style: TextStyle(
+                        fontFamily: "Infynite",
+                        color: yel,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

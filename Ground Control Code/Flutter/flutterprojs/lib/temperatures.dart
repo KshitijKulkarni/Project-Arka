@@ -3,6 +3,8 @@ import 'debug_draggable.dart';
 import 'package:flutter_glow/flutter_glow.dart';
 import 'colortheme.dart';
 import 'dart:math';
+import 'package:flutterprojs/serial_backend.dart';
+import 'package:provider/provider.dart';
 
 class Temperatures extends StatefulWidget {
   const Temperatures({super.key});
@@ -11,17 +13,23 @@ class Temperatures extends StatefulWidget {
   State<Temperatures> createState() => _TemperaturesState();
 }
 
-class _TemperaturesState extends State<Temperatures> with SingleTickerProviderStateMixin {
+class _TemperaturesState extends State<Temperatures>
+    with SingleTickerProviderStateMixin {
+  String tempU = "";
+  String tempL = "";
+  String tempR = "";
   int _selectedTier = 1; // 1 for inner, 2 for mid, 3 for outer
   late AnimationController _controller;
   late Animation<double> _animation;
-  final double _deselectedOpacity = 0.05; // Tunable variable for deselected opacity
+  final double _deselectedOpacity =
+      0.05; // Tunable variable for deselected opacity
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 10), // Adjust duration for rotation speed
+      duration: const Duration(seconds: 10),
+      // Adjust duration for rotation speed
       vsync: this,
     )..repeat();
     _animation = Tween<double>(begin: 0, end: 1).animate(_controller);
@@ -43,6 +51,25 @@ class _TemperaturesState extends State<Temperatures> with SingleTickerProviderSt
 
   @override
   Widget build(BuildContext context) {
+    final backend = Provider.of<SerialBackend>(context);
+
+    switch (_selectedTier) {
+      case 1:
+        tempU = backend.dataChunk['t1']!.toString();
+        tempL = backend.dataChunk['t2']!.toString();
+        tempR = backend.dataChunk['t3']!.toString();
+        break;
+      case 2:
+        tempU = backend.dataChunk['t4']!.toString();
+        tempL = backend.dataChunk['t5']!.toString();
+        tempR = backend.dataChunk['t6']!.toString();
+        break;
+      case 3:
+        tempU = backend.dataChunk['t7']!.toString();
+        tempL = backend.dataChunk['t8']!.toString();
+        tempR = backend.dataChunk['t9']!.toString();
+    }
+
     return Stack(
       children: [
         // Inner tier radio buttons
@@ -182,7 +209,7 @@ class _TemperaturesState extends State<Temperatures> with SingleTickerProviderSt
           top: 97,
           left: 165,
           child: GlowText(
-            "1342",
+            tempU,
             style: TextStyle(fontFamily: "Infynite", color: yel, fontSize: 28),
           ),
         ),
@@ -190,7 +217,7 @@ class _TemperaturesState extends State<Temperatures> with SingleTickerProviderSt
           top: 169,
           left: 210,
           child: GlowText(
-            "1342",
+            tempL,
             style: TextStyle(fontFamily: "Infynite", color: yel, fontSize: 28),
           ),
         ),
@@ -198,7 +225,7 @@ class _TemperaturesState extends State<Temperatures> with SingleTickerProviderSt
           top: 169,
           left: 119,
           child: GlowText(
-            "1342",
+            tempR,
             style: TextStyle(fontFamily: "Infynite", color: yel, fontSize: 28),
           ),
         ),

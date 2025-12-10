@@ -59,7 +59,7 @@ class SerialBackend with ChangeNotifier {
       "p4": 0.0,
       "p5": 0.0,
       "t1": 0.0,
-      "t2": 0.0,
+      "t2": 1.0,
       "t3": 0.0,
       "t4": 0.0,
       "t5": 0.0,
@@ -128,7 +128,7 @@ class SerialBackend with ChangeNotifier {
     serialPort.flush();
     serialPort.write(Uint8List.fromList([97]), timeout: 10); //Send a request
     Uint8List dataIn = serialPort.read(35, timeout: 10);
-    if(dataIn.length == 35) {
+    if(dataIn.length == 34) {
       print("Updated");
       print(dataIn.toString());
       // status is the first int (index 0)
