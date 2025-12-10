@@ -12,8 +12,8 @@ const uint8_t thambiMac[6] = {0xD4, 0x8A, 0xFC, 0xCE, 0xF3, 0x80};
 
 void setup() {
   // put your setup code here, to run once:
-  RemoteComms::begin(thambiMac);
   LocalComms::begin(115200);
+  RemoteComms::begin(thambiMac);
   
   directiveData.id = 0xAA; // Example directive ID
   directiveData.value = 150; // Example directive value
@@ -22,7 +22,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
-  if (RemoteComms::dataAvailable) {
+  // if (RemoteComms::dataAvailable) {
     RemoteComms::getData(&recvData);
     sendData.status = 1; // Example status
     sendData.rpm = recvData.rpm;
@@ -35,9 +35,9 @@ void loop() {
     for (int i = 0; i < 9; i++) {
       sendData.temperature[i] = recvData.temperature[i];
     }
-  }
+    // LocalComms::debugData(&sendData);
+  // }
   
-
 
   if (Serial.available()) {
     if (Serial.read() == 0x61) {
