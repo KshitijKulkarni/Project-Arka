@@ -1,1 +1,0 @@
-#define i2cAddress 0x42

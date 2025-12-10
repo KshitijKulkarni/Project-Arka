@@ -76,3 +76,10 @@ int ESPComms::sendData() {
     return success;
 }
 
+void ESPComms::getData(Directive* directive) {
+    Wire.requestFrom(_ESPaddress, sizeof(Directive));
+    if (Wire.available() >= sizeof(Directive)) {
+        Wire.readBytes((char*)directive, sizeof(Directive));
+    }
+}
+

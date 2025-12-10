@@ -3,17 +3,7 @@
 
 #include <Wire.h>
 #include <Arduino.h>
-
-#define BUFFER_SIZE 32 
-
-struct Buffer {
-    uint8_t rpm; //id - 0xA0
-    uint16_t thrust; //id - 0xB0
-    uint8_t flow; //id - 0xC0
-    uint16_t pressure[5]; //id - 0xD0
-    uint16_t temperature[9]; //id - 0xE0
-    // Total 32 bytes
-};
+#include "DataStructs.h"
 
 class ESPComms {
     public:
@@ -25,9 +15,10 @@ class ESPComms {
         int addBuffer(uint16_t data, uint8_t id, uint8_t index);
         
         int sendData();
+        void getData(Directive* directive);
     private:
         int _ESPaddress;
-        Buffer _buffer;
+        Gyan _buffer;
 };
 
 #endif

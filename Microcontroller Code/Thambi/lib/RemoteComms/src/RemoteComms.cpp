@@ -6,7 +6,7 @@
 
 // Define static members declared in the header to satisfy the linker
 bool RemoteComms::dataAvailable = false;
-Gyan RemoteComms::recvBuffer;
+Directive RemoteComms::recvBuffer;
 uint8_t RemoteComms::_peerMac[6] = {0};
 
 void RemoteComms::begin(const uint8_t* peerMac) {
@@ -28,22 +28,22 @@ void RemoteComms::begin(const uint8_t* peerMac) {
 }
 
 void RemoteComms::onDataRecv(const uint8_t* mac, const uint8_t* incomingData, int len) {
-    if (len == sizeof(Gyan)) {
+    if (len == sizeof(Directive)) {
         RemoteComms::dataAvailable = true;
         // Copy data to recvBuffer
-        memcpy(&RemoteComms::recvBuffer, incomingData, sizeof(Gyan));
+        memcpy(&RemoteComms::recvBuffer, incomingData, sizeof(Directive));
     }
 }
 
-void RemoteComms::getData(Gyan* data) {
+void RemoteComms::getDirective(Directive* data) {
     if (dataAvailable) {
-        memcpy(data, &RemoteComms::recvBuffer, sizeof(Gyan));
+        memcpy(data, &RemoteComms::recvBuffer, sizeof(Directive));
         RemoteComms::dataAvailable = false;
     }
 }
 
-bool RemoteComms::sendData(const Directive* data) {
-    esp_err_t result = esp_now_send(RemoteComms::_peerMac, (uint8_t *)data, sizeof(Directive));
+bool RemoteComms::sendData(const Gyan* data) {
+    esp_err_t result = esp_now_send(RemoteComms::_peerMac, (uint8_t *)data, sizeof(Gyan));
     if (result == ESP_OK) {
         return true;
     }
