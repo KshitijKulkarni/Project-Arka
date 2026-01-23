@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "ESPComms.h"
+#include "Tachometer.h"
 
 /*
   Tachometer class to read RPM from a tachometer signal.
@@ -8,48 +8,25 @@
   pulseCount must be modified by hardware interrupts, and readRPM is called when required.
 */
 
-class Tachometer{
-  
-  void begin();
-  int readRPM();
-  volatile int pulseCount; //directly modified by an interrupt
-
-  private:
-    volatile long int _lastPulseTime;
-    uint8_t _commsID;
-    ESPComms* _commsHandler;
-};
-
-void Tachometer::begin() {
-  pulseCount = 0;
-  _lastPulseTime = 0;
+Tachometer::Tachometer(uint8_t commsID, uint16_t* taskCounter, Gyan* dataBuffer) 
+    : _dataBuffer(dataBuffer), _taskCounter(taskCounter) {
+    _commsID = (1u << commsID);
+    pulseCount = 0;
+    _lastCallTime = millis();
 }
 
 int Tachometer::readRPM() {
-  long int interval = millis() - _lastPulseTime;
-  uint8_t rpm = pulseCount*100/interval; // Calculate rotations in every 0.1 seconds
-  
-  _lastPulseTime = millis();
+  _interval = millis() - _lastCallTime;
+  _rpm = pulseCount*100/_interval; // Calculate rotations in every millisecond
+
+  _lastCallTime = millis();
   pulseCount = 0; // Reset pulse count after reading
 
-  int success = _commsHandler->addBuffer(rpm, _commsID); // High byte
-  return success;
+  return 0;
 }
 
-// void tachometerRead() {
-//   // put your main code here, to run repeatedly:
-//   int starttime = millis();
-//   while (millis() - starttime < 100) {
-//     if (!pulseDone) {
-//       if (digitalRead(inputPin) == HIGH) {
-//         pulseCount++;
-//         pulseDone = true;
-//       }
-//     } else {
-//       if (digitalRead(inputPin) == LOW)
-//         pulseDone = false;
-//     }
-//   }
-//   Serial.println(pulseCount * 600);
-//   pulseCount = 0;
-// }
+int Tachometer::writeRPMtoBuffer() {
+  _dataBuffer->rpm = _rpm;
+  (*_taskCounter) |= _commsID; // Indicate task completion
+  return 0;
+}

@@ -1,36 +1,87 @@
 #include <Arduino.h>
-#include "ESPcomms.h"
-#include <Wire.h>
+#include "FreeRTOS.h"
+#include "DataStructs.h"
 
-#define ESP_I2C_ADDRESS 0x42 // Example I2C address of the ESP device
-#define I2C_DATA_RECEIVE 15
+#include "EthernetComms.h"
+
+#include "Tachometer.h"
+
+#define DAQ_TASK_COUNT 1
+
+#define TACHOMETER_PIN 2
+
+// Time slicing has been turned on for FreeRTOS in FreeRTOSConfig.h
+
+uint16_t completionCount = 0;
+uint16_t completionMask = (1 << DAQ_TASK_COUNT) - 1; // all DAQ tasks must complete
+
+/*
+  Task 0: Tachometer Data Acquisition
+*/
+
+Gyan dataBuffer;
+SemaphoreHandle_t dataBufferMutex;
+
+// Sensor Objects
+Tachometer tachometer(0, &completionCount, &dataBuffer);
 
 int main(void) {
-  // Example usage
   
-  ESPComms espComms(0x42); // Example I2C address
-  espComms.begin(100000); // Start I2C at 400kHz
-  Serial.begin(9600);
+  dataBufferMutex = xSemaphoreCreateMutex();
 
-  espComms.addBuffer((u_int8_t)120, 0xA0); // Example RPM data
-  espComms.addBuffer((u_int16_t)300, 0xB0); // Example Thrust
-  espComms.addBuffer((u_int8_t)50, 0xC0); // Example Flow rate
-  for (int i = 0; i < 5; i++) espComms.addBuffer((u_int16_t)(100 + i), 0xD0, i); // Example Pressure data
-  for (int i = 0; i < 9; i++) espComms.addBuffer((u_int16_t)(200 + i), 0xE0, i); // Example Temperature data
+  // Attaching all interrupts
+  attachInterrupt(digitalPinToInterrupt(TACHOMETER_PIN), tachometerISR, arduino::RISING);
 
-  Directive directive;
+  // Data Streaming tasks will start immediately
+  xTaskCreate(vTaskEthernet, "EthernetTask", 2048, NULL, 3, NULL);
+  xTaskCreate(vTaskTachometer, "TachometerTask", 2048, NULL, 3, NULL);
+
+  vTaskStartScheduler();
+
+  return 0;  
+}
+
+// Sensor Data Acquisition Tasks
+static void vTaskTachometer(void *args) {
 
   while (1) {
-    espComms.sendData();
-    Serial.write("Data sent to ESP\n");
-    // Handle sendResult as needed
-    delay(100); // Wait before next transmission
-    espComms.getData(&directive);
-    Serial.write(directive.id);
-
-    yield();
+    // Tachometer data acquisition code here
+    tachometer.readRPM();
+    // Indicate task completion
+    if (xSemaphoreTake(dataBufferMutex, (TickType_t)10) == pdTRUE) {
+      tachometer.writeRPMtoBuffer();
+      xSemaphoreGive(dataBufferMutex);
+    }
   }
+}
 
-  return 0;
+// Ethernet Communication Task
+static void vTaskEthernet(void *args) {
+  static EthComms ethComms(&dataBuffer,
+                  (const uint8_t[]){0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED},
+                  IPAddress(192, 168, 1, 177),
+                  IPAddress(192, 168, 1, 100),
+                  8888);
   
+  static uint8_t packetSpace = BATCH_SIZE; //defined in EthernetComms.h
+
+  while (1) {
+    if ((completionCount & completionMask) == completionMask){
+      if (xSemaphoreTake(dataBufferMutex, (TickType_t)10) == pdTRUE) {
+        packetSpace = ethComms.appendPacket();
+        completionCount = 0;
+        xSemaphoreGive(dataBufferMutex);
+      }
+    }
+
+    if (packetSpace <= 0) {
+      ethComms.sendPacket();
+      packetSpace = BATCH_SIZE;
+    }
+  }
+}
+
+// Interrupts
+void tachometerISR() {
+  tachometer.pulseCount++;
 }

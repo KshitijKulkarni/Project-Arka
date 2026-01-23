@@ -2,19 +2,24 @@
 #define TACHOMETER_H
 
 #include <Arduino.h>
-#include "ESPComms.h"
+#include "DataStructs.h"
 
 class Tachometer {
     public:
-        Tachometer(class ESPcomms* commsHandler);
-        void begin();
+        Tachometer(uint8_t commsID, uint16_t* taskCounter, Gyan* dataBuffer);
         int readRPM();
-        volatile int pulseCount; // directly modified by an interrupt
+        int writeRPMtoBuffer();
+        
+        volatile uint32_t pulseCount = 0; //Will be updated by interrupt
 
     private:
-        volatile long int _lastPulseTime;
-        uint8_t _commsID;
-        class ESPcomms* _commsHandler;
+        Gyan* _dataBuffer;
+        uint16_t* _taskCounter;
+        uint16_t _commsID;
+
+        uint32_t _interval;
+        uint8_t _rpm;
+        uint32_t _lastCallTime;
 };
 
 #endif

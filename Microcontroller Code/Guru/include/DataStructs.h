@@ -3,25 +3,26 @@
 
 #include <Arduino.h>
 
-struct Gyan {
+struct OldGyan {
     uint8_t rpm; //id - 0xA0
     uint16_t thrust; //id - 0xB0
     uint8_t flow; //id - 0xC0
-    uint16_t pressure[5]; //id - 0xD0
+    uint16_t pressure[4]; //id - 0xD0
     uint16_t temperature[9]; //id - 0xE0
-    // Total 32 bytes
+    // Total 30 bytes
     // Status should also be included in the future
 };
 
-struct ExtGyan {
+struct Gyan {
+    uint64_t timestamp;
     uint8_t rpm; //id - 0xA0
-    uint16_t thrust; //id - 0xB0
+    uint32_t thrust; //id - 0xB0
     uint8_t currFlow; //id - 0xC0
     uint8_t setFlow;
-    uint16_t pressure[5]; //id - 0xD0
-    uint16_t temperature[9]; //id - 0xE0
+    uint16_t pressure[4]; //id - 0xD0
+    uint32_t temperature[9]; //id - 0xE0
     uint8_t status;
-    // Total 34 bytes
+    // Total 46 bytes
 };
 
 struct Directive {
