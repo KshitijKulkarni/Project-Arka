@@ -396,7 +396,7 @@
       "version": 1
     },
     "net_format_name": "",
-    "page_layout_descr_file": "",
+    "page_layout_descr_file": "ECU Motherboard",
     "plot_directory": "",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
@@ -444,6 +444,58 @@
     [
       "c0496eb1-5cec-499b-a2b9-c70299f0e30e",
       "Oil Injector"
+    ],
+    [
+      "27f9d147-2e17-4c91-bb0b-5b3660accb5b",
+      "Thermocouple1"
+    ],
+    [
+      "f64f5909-243c-44f4-8a0d-0b56181acb9e",
+      "Thermocouple2"
+    ],
+    [
+      "c4c1973d-5436-4e7f-b95e-f77a4f16d85f",
+      "Thermocouple3"
+    ],
+    [
+      "11a41087-3c91-483c-9b84-9b4b390ea6bf",
+      "Thermocouple4"
+    ],
+    [
+      "d5aabe29-28fd-420f-b684-c56313ee47f3",
+      "Thermocouple5"
+    ],
+    [
+      "638d8cd3-11c9-4d95-b17c-c3d98881e4a8",
+      "Thermocouple6"
+    ],
+    [
+      "d8c339b8-6612-4b50-808d-148d2584ca02",
+      "Thermocouple7"
+    ],
+    [
+      "ab19c645-77c1-4544-8825-cbc7c98c4ffe",
+      "Thermocouple8"
+    ],
+    [
+      "97716e71-7bff-443d-bd85-3776d39bcbd8",
+      "Thermocouple9"
+    ],
+    [
+      "1cf3b290-b340-4ad4-aeff-7e67f3ee762b",
+      "PT1"
+    ],
+    [
+      "7bd45f67-43b0-4036-8591-7b0025cd58c0",
+      "PT2"
+    ],
+    [
+      "2b1db5eb-9ace-4be8-b160-73c548922986",
+      "PT3"
+    ],
+    [
+      "a5e4a4ac-dcc9-4ebb-9434-8bf7bae9161a",
+      "PT4"
     ]
   ],
   "text_variables": {}
