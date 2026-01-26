@@ -287,49 +287,6 @@
 		)
 	)
 	(sheet
-		(at 86.36 22.86)
-		(size 16.51 13.97)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-			(color 255 66 73 1)
-		)
-		(fill
-			(color 255 187 179 1.0000)
-		)
-		(uuid "1cf3b290-b340-4ad4-aeff-7e67f3ee762b")
-		(property "Sheetname" "PT1"
-			(at 86.36 22.1484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "PT.kicad_sch"
-			(at 86.36 37.4146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "MotherPCB"
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0"
-					(page "19")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 120.65 86.995)
 		(size 16.51 13.97)
 		(exclude_from_sim no)
@@ -423,49 +380,6 @@
 		)
 	)
 	(sheet
-		(at 86.36 63.5)
-		(size 16.51 13.97)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-			(color 255 66 73 1)
-		)
-		(fill
-			(color 255 187 179 1.0000)
-		)
-		(uuid "2b1db5eb-9ace-4be8-b160-73c548922986")
-		(property "Sheetname" "PT3"
-			(at 86.36 62.7884 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "PT.kicad_sch"
-			(at 86.36 78.0546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "MotherPCB"
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0"
-					(page "21")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 251.46 30.48)
 		(size 16.51 13.335)
 		(exclude_from_sim no)
@@ -538,8 +452,8 @@
 		)
 	)
 	(sheet
-		(at 40.64 22.86)
-		(size 16.51 13.97)
+		(at 62.23 29.21)
+		(size 16.51 46.99)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -555,7 +469,7 @@
 		)
 		(uuid "58b7763a-b863-498c-a2bf-e5a83db7c2fb")
 		(property "Sheetname" "PT"
-			(at 40.64 22.1484 0)
+			(at 62.23 28.4984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -564,12 +478,102 @@
 			)
 		)
 		(property "Sheetfile" "PT.kicad_sch"
-			(at 40.64 37.4146 0)
+			(at 62.23 76.7846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "DO" input
+			(at 78.74 71.12 0)
+			(uuid "52484f4b-cb83-4e89-bdd4-c708abca6082")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "RESET" input
+			(at 78.74 73.66 0)
+			(uuid "85824f3e-e69c-4175-bc1d-efa5b3a115eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "3V3_DVDD" input
+			(at 78.74 33.02 0)
+			(uuid "0f45eed7-e0ad-4409-bb42-95f758cac328")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "DI" output
+			(at 78.74 68.58 0)
+			(uuid "cccd6a6c-5d71-43d7-87dc-d4cfa83c09a4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SCK" input
+			(at 78.74 66.04 0)
+			(uuid "ab1ebc69-3cac-46c9-a9cd-a90464f80414")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "DRDY" output
+			(at 78.74 60.96 0)
+			(uuid "a0477a2c-9ab2-4c7f-b330-624630bc5d32")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "5V_AVDD" input
+			(at 78.74 35.56 0)
+			(uuid "9e0815bf-998e-4546-a1e9-afb59420ca65")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" passive
+			(at 78.74 38.1 0)
+			(uuid "80129bce-32cd-4dc3-ac57-c3d4508bc7bc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CS" input
+			(at 78.74 63.5 0)
+			(uuid "57357642-6916-42ad-99fa-364f6dc08fb1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -756,7 +760,7 @@
 		)
 	)
 	(sheet
-		(at 251.46 81.28)
+		(at 252.73 105.41)
 		(size 16.51 15.24)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -773,7 +777,7 @@
 		)
 		(uuid "644d9840-e391-44c1-8897-df45a9dc9f94")
 		(property "Sheetname" "Load Cell"
-			(at 251.46 80.5684 0)
+			(at 252.73 104.6984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -782,7 +786,7 @@
 			)
 		)
 		(property "Sheetfile" "LoadCell.kicad_sch"
-			(at 251.46 97.1046 0)
+			(at 252.73 121.2346 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -791,7 +795,7 @@
 			)
 		)
 		(pin "3V3" input
-			(at 267.97 87.63 0)
+			(at 269.24 111.76 0)
 			(uuid "f96e6cd8-cbe6-4ddc-86b0-c9f804a974c6")
 			(effects
 				(font
@@ -801,7 +805,7 @@
 			)
 		)
 		(pin "GND" input
-			(at 267.97 90.17 0)
+			(at 269.24 114.3 0)
 			(uuid "b06de950-b9eb-4117-9e6d-685dbd6887d0")
 			(effects
 				(font
@@ -811,7 +815,7 @@
 			)
 		)
 		(pin "MISO" input
-			(at 251.46 87.63 180)
+			(at 252.73 111.76 180)
 			(uuid "26f457a0-43c8-4477-b934-231a751e6466")
 			(effects
 				(font
@@ -821,7 +825,7 @@
 			)
 		)
 		(pin "SCK" input
-			(at 251.46 90.17 180)
+			(at 252.73 114.3 180)
 			(uuid "8fcfc5ef-2924-43b6-8b31-a978bec89e53")
 			(effects
 				(font
@@ -834,49 +838,6 @@
 			(project "MotherPCB"
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0"
 					(page "4")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 40.64 63.5)
-		(size 16.51 13.97)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-			(color 255 66 73 1)
-		)
-		(fill
-			(color 255 187 179 1.0000)
-		)
-		(uuid "7bd45f67-43b0-4036-8591-7b0025cd58c0")
-		(property "Sheetname" "PT2"
-			(at 40.64 62.7884 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "PT.kicad_sch"
-			(at 40.64 78.0546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "MotherPCB"
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0"
-					(page "20")
 				)
 			)
 		)
@@ -975,7 +936,7 @@
 		)
 	)
 	(sheet
-		(at 63.5 44.45)
+		(at 251.46 80.645)
 		(size 16.51 13.97)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -985,14 +946,14 @@
 		(stroke
 			(width 0.1524)
 			(type solid)
-			(color 255 66 73 1)
+			(color 94 60 49 1)
 		)
 		(fill
-			(color 255 187 179 1.0000)
+			(color 170 138 129 1.0000)
 		)
-		(uuid "a5e4a4ac-dcc9-4ebb-9434-8bf7bae9161a")
-		(property "Sheetname" "PT4"
-			(at 63.5 43.7384 0)
+		(uuid "a4540496-ccc9-4468-b8e5-d6cabcdd3aa4")
+		(property "Sheetname" "Oil Injector1"
+			(at 251.46 79.9334 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1000,8 +961,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "PT.kicad_sch"
-			(at 63.5 59.0046 0)
+		(property "Sheetfile" "Oiljector.kicad_sch"
+			(at 251.46 95.1996 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1009,10 +970,40 @@
 				(justify left top)
 			)
 		)
+		(pin "TGR" input
+			(at 251.46 87.63 180)
+			(uuid "79cab24e-1b91-4340-bf65-3793adb11937")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "5V" input
+			(at 267.97 85.09 0)
+			(uuid "e1054140-0a26-42ce-b156-b37bcdca5b7a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" passive
+			(at 267.97 88.9 0)
+			(uuid "8036c0e9-39b0-494f-952a-cd02eab6acc6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "MotherPCB"
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0"
-					(page "22")
+					(page "19")
 				)
 			)
 		)
@@ -1143,6 +1134,36 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "TGR" input
+			(at 251.46 63.5 180)
+			(uuid "d07cd0a9-5fd3-48db-a920-f311c742eb34")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "5V" input
+			(at 267.97 60.96 0)
+			(uuid "c71d4987-c2ca-4edc-ae6d-acf4f588f164")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" passive
+			(at 267.97 64.77 0)
+			(uuid "f1ce707e-ce5e-41de-99df-ce366f0985c1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances

@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "7ba2d465-b15d-4d9e-ba6b-71034cc30fb1")
 	(paper "A4")
+	(title_block
+		(title "Pressure Transducer Hat Interface")
+		(date "2026-01-26")
+		(rev "1.0")
+		(company "Project Arka")
+	)
 	(lib_symbols
 		(symbol "Connector:Raspberry_Pi_2_3"
 			(exclude_from_sim no)
@@ -819,115 +825,104 @@
 			(embedded_fonts no)
 		)
 	)
-	(global_label "DRDY"
+	(hierarchical_label "5V_AVDD"
 		(shape input)
-		(at 118.11 88.9 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1d40c458-4d77-4cbb-b6eb-f9163ebf46c9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 110.2262 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CS"
-		(shape input)
-		(at 118.11 106.68 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2fb27a28-0374-4ebb-b3f5-07651cf61c81")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 112.6453 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "DIN"
-		(shape input)
-		(at 158.75 109.22 0)
-		(fields_autoplaced yes)
+		(at 133.35 68.58 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "854d985b-e93f-4dc7-83ea-625c5b9fdbcf")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 164.9405 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
+		(uuid "1edfd79f-238d-4c5c-bc70-d967397f116d")
 	)
-	(global_label "DO"
-		(shape input)
-		(at 158.75 111.76 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c19dfc6b-3204-4e22-825c-dfc9aa16cafd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 164.3357 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SCK"
+	(hierarchical_label "SCK"
 		(shape input)
 		(at 158.75 114.3 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "cfa76bb9-8834-465b-bec8-a71133e8bbe6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 165.4847 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
+		(uuid "3bfc777b-d3fe-48d7-8106-d5ffc21a5314")
+	)
+	(hierarchical_label "DI"
+		(shape output)
+		(at 158.75 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
+		(uuid "51c5a297-01a6-445e-b308-949ed48bfbcf")
+	)
+	(hierarchical_label "DRDY"
+		(shape output)
+		(at 118.11 88.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6885ac10-7582-41ed-8245-b5bf3978bf0f")
+	)
+	(hierarchical_label "DO"
+		(shape input)
+		(at 158.75 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8a1926e9-5e42-45e3-afc4-1c6887552b96")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 138.43 134.62 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b344f5a0-922c-40d5-b396-ddfaa1340e34")
+	)
+	(hierarchical_label "RESET"
+		(shape input)
+		(at 118.11 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e221343a-7c64-4235-8d91-304c3b629b8c")
+	)
+	(hierarchical_label "CS"
+		(shape input)
+		(at 118.11 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f0594c30-9418-4a62-ab26-4166dfa9b429")
+	)
+	(hierarchical_label "3V3_DVDD"
+		(shape input)
+		(at 143.51 68.58 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f2a0ca89-0e0b-43a4-b31f-983a6c63d2d7")
 	)
 	(symbol
 		(lib_id "Connector:Raspberry_Pi_2_3")
@@ -939,7 +934,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2881d9b0-5ccb-4fd3-8cc0-b1a0bf2a643d")
-		(property "Reference" "J2"
+		(property "Reference" "J?"
 			(at 140.5733 134.62 0)
 			(effects
 				(font
@@ -1105,9 +1100,21 @@
 			(uuid "dfd7cb99-ae12-4b7b-88fc-7c91e6fc3880")
 		)
 		(instances
+			(project "PT"
+				(path "/7ba2d465-b15d-4d9e-ba6b-71034cc30fb1"
+					(reference "J?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/ab0f1194-a63d-4164-a2ac-f17f7396e885"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+			(project "MotherPCB"
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/58b7763a-b863-498c-a2bf-e5a83db7c2fb"
+					(reference "J?")
 					(unit 1)
 				)
 			)

@@ -482,20 +482,8 @@
       "Thermocouple9"
     ],
     [
-      "1cf3b290-b340-4ad4-aeff-7e67f3ee762b",
-      "PT1"
-    ],
-    [
-      "7bd45f67-43b0-4036-8591-7b0025cd58c0",
-      "PT2"
-    ],
-    [
-      "2b1db5eb-9ace-4be8-b160-73c548922986",
-      "PT3"
-    ],
-    [
-      "a5e4a4ac-dcc9-4ebb-9434-8bf7bae9161a",
-      "PT4"
+      "a4540496-ccc9-4468-b8e5-d6cabcdd3aa4",
+      "Oil Injector1"
     ]
   ],
   "text_variables": {}
