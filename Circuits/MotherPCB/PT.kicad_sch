@@ -934,7 +934,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2881d9b0-5ccb-4fd3-8cc0-b1a0bf2a643d")
-		(property "Reference" "J?"
+		(property "Reference" "J20"
 			(at 140.5733 134.62 0)
 			(effects
 				(font
@@ -1114,7 +1114,7 @@
 			)
 			(project "MotherPCB"
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/58b7763a-b863-498c-a2bf-e5a83db7c2fb"
-					(reference "J?")
+					(reference "J20")
 					(unit 1)
 				)
 			)

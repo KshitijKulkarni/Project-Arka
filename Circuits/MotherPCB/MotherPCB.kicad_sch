@@ -5833,7 +5833,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ESP32-DEVKITC-32E:MODULE_ESP32-DEVKITC-32E"
+		(property "Footprint" "Additional_Components:MODULE_ESP32-DEVKITC-32E"
 			(at 210.82 135.89 0)
 			(effects
 				(font

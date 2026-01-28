@@ -3790,7 +3790,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5b560a30-2bb6-45d2-b76a-08a6d941d01d")
-		(property "Reference" "R?"
+		(property "Reference" "R10"
 			(at 110.49 143.5099 0)
 			(effects
 				(font
@@ -3872,7 +3872,7 @@
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/da95a8c2-1e5d-4053-8fb4-7b6063b75ac8"
-					(reference "R?")
+					(reference "R10")
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
@@ -3892,7 +3892,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "608d0c27-1cb6-4807-85ac-9d8f6ec3a0b6")
-		(property "Reference" "C?"
+		(property "Reference" "C21"
 			(at 156.21 149.8662 0)
 			(effects
 				(font
@@ -4001,7 +4001,7 @@
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/da95a8c2-1e5d-4053-8fb4-7b6063b75ac8"
-					(reference "C?")
+					(reference "C21")
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
@@ -4021,7 +4021,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8799fb11-22be-45bb-9d95-bc00ca3048e5")
-		(property "Reference" "C?"
+		(property "Reference" "C20"
 			(at 156.21 102.8762 0)
 			(effects
 				(font
@@ -4130,7 +4130,7 @@
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/da95a8c2-1e5d-4053-8fb4-7b6063b75ac8"
-					(reference "C?")
+					(reference "C20")
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
@@ -4150,7 +4150,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a2174583-d776-401b-9c6a-04582598533a")
-		(property "Reference" "J?"
+		(property "Reference" "J18"
 			(at 77.47 91.44 0)
 			(effects
 				(font
@@ -4166,7 +4166,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Additional_Components:SAMTEC_USB3-A-S-F-TH"
 			(at 81.28 107.95 0)
 			(effects
 				(font
@@ -4254,7 +4254,7 @@
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/da95a8c2-1e5d-4053-8fb4-7b6063b75ac8"
-					(reference "J?")
+					(reference "J18")
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
@@ -4274,7 +4274,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a5293de9-77c5-4f2f-be7d-75f46e2d54b6")
-		(property "Reference" "U?"
+		(property "Reference" "U21"
 			(at 142.8181 120.65 0)
 			(effects
 				(font
@@ -4374,7 +4374,7 @@
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/da95a8c2-1e5d-4053-8fb4-7b6063b75ac8"
-					(reference "U?")
+					(reference "U21")
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
@@ -4394,7 +4394,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ce430e3f-8edd-4ebb-acfe-47e3a15a85a2")
-		(property "Reference" "U?"
+		(property "Reference" "U19"
 			(at 142.8181 71.12 0)
 			(effects
 				(font
@@ -4494,7 +4494,7 @@
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/da95a8c2-1e5d-4053-8fb4-7b6063b75ac8"
-					(reference "U?")
+					(reference "U19")
 					(unit 1)
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
