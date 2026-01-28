@@ -480,6 +480,10 @@
     [
       "a4540496-ccc9-4468-b8e5-d6cabcdd3aa4",
       "Oil Injector1"
+    ],
+    [
+      "e706f9a3-7a76-43d6-af66-7fb71d6fd69d",
+      "Tachometer"
     ]
   ],
   "text_variables": {}

@@ -254,7 +254,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "DEV-16771:MODULE_DEV-16771"
+		(property "Footprint" "Additional_Components:Teensy_4.1"
 			(at 0 0 0)
 			(effects
 				(font
