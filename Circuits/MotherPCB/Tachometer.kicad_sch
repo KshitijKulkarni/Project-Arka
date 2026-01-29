@@ -209,171 +209,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PCM_SparkFun-Capacitor:0.1uF_0402_16V_10%"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "0.1uF"
-				(at 0.635 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "PCM_SparkFun-Capacitor:C_0402_1005Metric"
-				(at 0 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf"
-				(at 0 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Unpolarized capacitor"
-				(at 0 -19.05 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "PROD_ID" "CAP-25565"
-				(at 0 -16.51 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Voltage" "16V"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Tolerance" "10%"
-				(at 0 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "SparkFun cap capacitor 100nF"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "0.1uF_0402_16V_10%_0_1"
-				(polyline
-					(pts
-						(xy -1.524 0.508) (xy 1.524 0.508)
-					)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.524 -0.508) (xy 1.524 -0.508)
-					)
-					(stroke
-						(width 0.3302)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "0.1uF_0402_16V_10%_1_1"
-				(pin passive line
-					(at 0 2.54 270)
-					(length 2.032)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 2.032)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "PCM_SparkFun-Resistor:10k_0603"
+		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
 			)
@@ -384,23 +220,23 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "R"
-				(at 0 -2.54 0)
+				(at 2.032 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "10k"
-				(at 0 2.54 0)
+			(property "Value" "R"
+				(at 0 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "PCM_SparkFun-Resistor:R_0603_1608Metric"
-				(at 0 -4.318 0)
+			(property "Footprint" ""
+				(at -1.778 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -408,8 +244,8 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-				(at 0 -8.89 0)
+			(property "Datasheet" "~"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -418,7 +254,7 @@
 				)
 			)
 			(property "Description" "Resistor"
-				(at 0 -11.43 0)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -426,16 +262,7 @@
 					(hide yes)
 				)
 			)
-			(property "PROD_ID" "RES-00824"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "SparkFun R res resistor"
+			(property "ki_keywords" "R res resistor"
 				(at 0 0 0)
 				(effects
 					(font
@@ -453,25 +280,12 @@
 					(hide yes)
 				)
 			)
-			(symbol "10k_0603_0_1"
-				(polyline
-					(pts
-						(xy -1.524 0) (xy -1.143 1.016) (xy -0.762 0) (xy -0.381 -1.016) (xy 0 0)
-					)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
 					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0.381 1.016) (xy 0.762 0) (xy 1.143 -1.016) (xy 1.524 0)
-					)
-					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -479,10 +293,10 @@
 					)
 				)
 			)
-			(symbol "10k_0603_1_1"
+			(symbol "R_1_1"
 				(pin passive line
-					(at -2.54 0 0)
-					(length 1.016)
+					(at 0 3.81 270)
+					(length 1.27)
 					(name "~"
 						(effects
 							(font
@@ -499,8 +313,8 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 0 180)
-					(length 1.016)
+					(at 0 -3.81 90)
+					(length 1.27)
 					(name "~"
 						(effects
 							(font
@@ -519,471 +333,121 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PCM_Transistor_MOSFET_AKL:BSS138W"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "BSS138W"
-				(at 5.08 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-323_SC-70"
-				(at 5.08 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.tme.eu/Document/f483c11658d08b2b6d6a523965af8c3c/BSS138W.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "SOT-323 N-MOSFET enchancement mode transistor, 50V, 200mA, 200mW, Alternate KiCAD Library"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "enchancement mosfet nmosfet n-mosfet nmos n-mos emos emosfet BSS138W"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "BSS138W_0_1"
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 -1.27) (xy -2.54 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 2.54 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.1778)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "BSS138W_1_1"
-				(pin input line
-					(at -3.81 -1.27 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(junction
-		(at 114.3 109.22)
+		(at 121.92 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "74eda729-4e92-4c7f-9efc-117512aeb1d7")
+		(uuid "66b01caf-eb10-4617-a58c-421968336c9a")
 	)
 	(junction
-		(at 129.54 86.36)
+		(at 121.92 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a376764a-38a8-424a-9de5-7de3ab07d175")
-	)
-	(junction
-		(at 129.54 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f609c8a7-f16d-467d-8fe3-6265c113227f")
+		(uuid "958a8509-85cd-43a5-b98f-22ab22a8e891")
 	)
 	(wire
 		(pts
-			(xy 106.68 86.36) (xy 129.54 86.36)
+			(xy 114.3 86.36) (xy 114.3 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "052a8b9d-17e6-4438-8ad2-24ff0b6047ef")
+		(uuid "0b4d82e9-38a2-4104-8256-ffdcebf5e2af")
 	)
 	(wire
 		(pts
-			(xy 124.46 100.33) (xy 129.54 100.33)
+			(xy 97.79 106.68) (xy 101.6 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "098bdc4f-208f-4f41-a2ca-b96ee220fffe")
+		(uuid "42343cba-71f6-433b-b9de-b15785fc9263")
 	)
 	(wire
 		(pts
-			(xy 135.89 109.22) (xy 148.59 109.22)
+			(xy 121.92 93.98) (xy 143.51 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "25d3b700-3f99-4fe6-850a-e4ed0f9ac3d4")
+		(uuid "47d4f4c8-bf3c-4055-8c41-3fa564fab66f")
 	)
 	(wire
 		(pts
-			(xy 114.3 109.22) (xy 125.73 109.22)
+			(xy 97.79 104.14) (xy 114.3 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4137e590-0dc6-4bd0-a6c0-eba7f434c189")
+		(uuid "6c65cfcd-b8b5-4846-8fb9-ccc0a8aa2210")
 	)
 	(wire
 		(pts
-			(xy 97.79 106.68) (xy 106.68 106.68)
+			(xy 97.79 109.22) (xy 121.92 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6cc6438a-3593-42b6-8456-c63cead9ab1c")
+		(uuid "7bbfd20a-6576-42ea-9772-c839bc8dd2a3")
 	)
 	(wire
 		(pts
-			(xy 97.79 109.22) (xy 114.3 109.22)
+			(xy 114.3 86.36) (xy 121.92 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "75d9346d-1ba5-4b58-b5e2-a280014bd73b")
+		(uuid "865f9483-de8d-4ffe-b0f9-26ba2eb1b57c")
 	)
 	(wire
 		(pts
-			(xy 106.68 106.68) (xy 106.68 86.36)
+			(xy 121.92 109.22) (xy 143.51 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ae64141b-bbd3-4925-ac5f-52250b11bfce")
-	)
-	(wire
-		(pts
-			(xy 129.54 86.36) (xy 143.51 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aec7b078-16d0-48c2-a62b-3b0fb1261ee1")
-	)
-	(wire
-		(pts
-			(xy 119.38 100.33) (xy 114.3 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b302775e-86d2-4407-89c6-c53ba1f808c0")
-	)
-	(wire
-		(pts
-			(xy 114.3 100.33) (xy 114.3 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d80fa3b2-f939-4d24-a5f1-4310f6b77e14")
-	)
-	(wire
-		(pts
-			(xy 129.54 86.36) (xy 129.54 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7e122c5-dbfb-4080-9214-7a4587b0b7a0")
-	)
-	(wire
-		(pts
-			(xy 129.54 100.33) (xy 148.59 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea553291-dca0-4dcc-87dc-574708c35561")
-	)
-	(wire
-		(pts
-			(xy 129.54 96.52) (xy 129.54 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f10efd8e-31cc-4ad2-9b1d-ca186a49442a")
-	)
-	(wire
-		(pts
-			(xy 129.54 100.33) (xy 129.54 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc51f69f-a8be-4228-bbf4-e8d647ae27fc")
-	)
-	(hierarchical_label "3V3"
-		(shape input)
-		(at 148.59 100.33 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0bcaac74-ca9c-4a4e-9d7b-80837ea5c725")
+		(uuid "fe67671b-b1a0-4cff-b9a3-befe16ab49d7")
 	)
 	(hierarchical_label "GND"
 		(shape passive)
-		(at 143.51 86.36 0)
+		(at 143.51 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "0d622d59-6bc1-43c6-b3ff-b486ff5b5630")
+		(uuid "00092c88-3ca1-469d-9bdf-cf4048ed2f58")
+	)
+	(hierarchical_label "SIG"
+		(shape output)
+		(at 143.51 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ad6930dd-6c59-40c8-a298-52500b53605a")
 	)
 	(hierarchical_label "5V"
 		(shape input)
-		(at 97.79 104.14 0)
+		(at 101.6 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "2fafc01d-1c13-4f9d-ba47-ece6c8b8174d")
-	)
-	(hierarchical_label "PULSE"
-		(shape output)
-		(at 148.59 109.22 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e5c47ace-9edc-4b11-a3ad-4cfec217ad3b")
+		(uuid "bbc49a47-d8ce-4daf-afcb-9a00a3c03bbf")
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x03_Pin")
@@ -1057,201 +521,35 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_SparkFun-Capacitor:0.1uF_0402_16V_10%")
-		(at 129.54 93.98 0)
+		(lib_id "Device:R")
+		(at 121.92 97.79 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "24cda3b9-2c8b-4b17-a8c2-a720b049b38d")
-		(property "Reference" "C19"
-			(at 132.08 90.1762 0)
+		(uuid "748b0986-01a9-4ca5-a3ce-62ae4101270f")
+		(property "Reference" "R20"
+			(at 124.46 96.5199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 132.08 92.7162 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "PCM_SparkFun-Capacitor:C_0402_1005Metric"
-			(at 129.54 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf"
-			(at 129.54 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 129.54 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PROD_ID" "CAP-25565"
-			(at 129.54 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Voltage" "16V"
-			(at 132.08 95.2562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "10%"
-			(at 132.08 97.7962 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "2"
-			(uuid "b471e581-acf9-4154-9f4f-2506e579505c")
-		)
-		(pin "1"
-			(uuid "6867ceb9-3c54-45c6-bc53-11f3f0774df7")
-		)
-		(instances
-			(project ""
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/e706f9a3-7a76-43d6-af66-7fb71d6fd69d"
-					(reference "C19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_Transistor_MOSFET_AKL:BSS138W")
-		(at 130.81 106.68 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "251b7a43-d079-4a68-a39d-c8b0596a94f5")
-		(property "Reference" "Q1"
-			(at 130.81 113.03 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BSS138W"
-			(at 130.81 115.57 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-323_SC-70"
-			(at 133.35 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.tme.eu/Document/f483c11658d08b2b6d6a523965af8c3c/BSS138W.pdf"
-			(at 130.81 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "SOT-323 N-MOSFET enchancement mode transistor, 50V, 200mA, 200mW, Alternate KiCAD Library"
-			(at 130.81 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "195f3c98-0229-4d09-b58c-c0a46cea1e27")
-		)
-		(pin "3"
-			(uuid "d2040cbd-feee-4f62-8804-9209c7eeb495")
-		)
-		(pin "2"
-			(uuid "87eac72a-1f54-4cbf-b70b-ccd915cad656")
-		)
-		(instances
-			(project ""
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/e706f9a3-7a76-43d6-af66-7fb71d6fd69d"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_SparkFun-Resistor:10k_0603")
-		(at 121.92 100.33 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d62f3023-d965-4db6-8d8a-439eec4f2384")
-		(property "Reference" "R9"
-			(at 121.92 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "Value" "10k"
-			(at 121.92 96.52 0)
+			(at 124.46 99.0599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "PCM_SparkFun-Resistor:R_0603_1608Metric"
-			(at 121.92 104.648 0)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+			(at 120.142 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1259,8 +557,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 121.92 109.22 0)
+		(property "Datasheet" "~"
+			(at 121.92 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1269,28 +567,158 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 121.92 111.76 0)
+			(at 121.92 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "PROD_ID" "RES-00824"
-			(at 121.92 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6a9ca069-cf1b-4a3c-a5c8-d0660ed4da08")
 		)
 		(pin "2"
-			(uuid "e834fefe-5e87-4046-b180-dc262c1a40a1")
+			(uuid "52650953-eed4-4f91-acf1-f78147281f7c")
+		)
+		(pin "1"
+			(uuid "98a69d57-9956-4a99-b267-db7efecb6ef6")
+		)
+		(instances
+			(project "MotherPCB"
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/e706f9a3-7a76-43d6-af66-7fb71d6fd69d"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 121.92 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "baa89b2a-3297-4592-b0cc-86eaf9bce4ef")
+		(property "Reference" "R21"
+			(at 124.46 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 124.46 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+			(at 120.142 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 121.92 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "73ba5caa-352a-4c33-a89e-a432327cb059")
+		)
+		(pin "1"
+			(uuid "0408bd2d-01e8-4c47-a3b2-fc1d90194a08")
+		)
+		(instances
+			(project "MotherPCB"
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/e706f9a3-7a76-43d6-af66-7fb71d6fd69d"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 121.92 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e6b9e671-4ede-4eab-8aa5-bead7c0c77ec")
+		(property "Reference" "R9"
+			(at 124.46 104.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 124.46 106.6799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+			(at 120.142 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 121.92 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "edea36ae-8a43-483c-be4b-70dda29b7660")
+		)
+		(pin "1"
+			(uuid "7c253920-9e95-4911-b8e6-5141a40eb7b7")
 		)
 		(instances
 			(project ""

@@ -1309,6 +1309,22 @@
 		(color 0 0 0 0)
 		(uuid "d586788b-8824-4927-b950-7cebb2e53fed")
 	)
+	(no_connect
+		(at 74.93 128.27)
+		(uuid "0a66d0d5-f1fd-45b5-b046-79914f9fcb0d")
+	)
+	(no_connect
+		(at 149.86 93.98)
+		(uuid "0f8ef630-9f8e-4fd0-9986-352539c7b831")
+	)
+	(no_connect
+		(at 149.86 133.35)
+		(uuid "54a10697-de9f-455a-9a70-6146daee4ad0")
+	)
+	(no_connect
+		(at 72.39 128.27)
+		(uuid "6e28d94f-602e-4e75-bcbf-7948ee68789a")
+	)
 	(wire
 		(pts
 			(xy 139.7 157.48) (xy 139.7 153.67)
@@ -1361,6 +1377,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 143.51) (xy 158.75 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "329a3288-5be6-4c00-88b1-1573a0dce009")
+	)
+	(wire
+		(pts
 			(xy 107.95 148.59) (xy 129.54 148.59)
 		)
 		(stroke
@@ -1378,16 +1404,6 @@
 			(type default)
 		)
 		(uuid "64e82426-8a0a-4304-ac09-53a664a15cde")
-	)
-	(wire
-		(pts
-			(xy 149.86 133.35) (xy 158.75 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6dafa5f0-6910-40fa-ad09-bdcfbdb02c53")
 	)
 	(wire
 		(pts
@@ -3627,17 +3643,6 @@
 	)
 	(hierarchical_label "GND"
 		(shape input)
-		(at 153.67 104.14 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "111bde72-d497-46cf-8248-1e8869230fae")
-	)
-	(hierarchical_label "GND"
-		(shape input)
 		(at 139.7 123.19 90)
 		(effects
 			(font
@@ -3680,9 +3685,31 @@
 		)
 		(uuid "5803c008-792d-4828-9ac4-3259629ddf90")
 	)
+	(hierarchical_label "3.3V"
+		(shape input)
+		(at 151.13 106.68 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5a6ea4c6-568b-4b44-bd44-9c28ea46898f")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 151.13 101.6 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6155e180-c5b5-44e7-90cb-69d92021a1fa")
+	)
 	(hierarchical_label "MISO"
 		(shape output)
-		(at 158.75 133.35 0)
+		(at 158.75 143.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3770,17 +3797,6 @@
 		)
 		(uuid "e72e1a0e-1580-4e3a-b6c4-eb3353d51e75")
 	)
-	(hierarchical_label "3.3V"
-		(shape input)
-		(at 153.67 109.22 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f24b17d1-f843-41f2-9d0a-1c7b0c7f99f7")
-	)
 	(symbol
 		(lib_id "Device:R")
 		(at 107.95 144.78 0)
@@ -3808,7 +3824,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 106.172 144.78 90)
 			(effects
 				(font
@@ -3910,7 +3926,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
 			(at 154.6352 165.1 0)
 			(effects
 				(font
@@ -4006,135 +4022,6 @@
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
 					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_SparkFun-Capacitor:C_Small")
-		(at 153.67 106.68 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8799fb11-22be-45bb-9d95-bc00ca3048e5")
-		(property "Reference" "C20"
-			(at 156.21 102.8762 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 156.21 105.4162 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
-			(at 154.6352 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf"
-			(at 154.94 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 153.67 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PROD_ID" "CAP-00000"
-			(at 153.67 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Voltage" "1kV"
-			(at 156.21 107.9562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "100%"
-			(at 156.21 110.4962 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "1"
-			(uuid "1f830874-b309-4e0a-8028-f8d64d160c5c")
-		)
-		(pin "2"
-			(uuid "7710d745-3d3b-4770-8405-411a28366779")
-		)
-		(instances
-			(project "MotherPCB"
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/11a41087-3c91-483c-9b84-9b4b390ea6bf"
-					(reference "C9")
-					(unit 1)
-				)
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/27f9d147-2e17-4c91-bb0b-5b3660accb5b"
-					(reference "C3")
-					(unit 1)
-				)
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/638d8cd3-11c9-4d95-b17c-c3d98881e4a8"
-					(reference "C13")
-					(unit 1)
-				)
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/ab19c645-77c1-4544-8825-cbc7c98c4ffe"
-					(reference "C17")
-					(unit 1)
-				)
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/c4c1973d-5436-4e7f-b95e-f77a4f16d85f"
-					(reference "C7")
-					(unit 1)
-				)
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/d5aabe29-28fd-420f-b684-c56313ee47f3"
-					(reference "C11")
-					(unit 1)
-				)
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/d8c339b8-6612-4b50-808d-148d2584ca02"
-					(reference "C15")
-					(unit 1)
-				)
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/da95a8c2-1e5d-4053-8fb4-7b6063b75ac8"
-					(reference "C20")
-					(unit 1)
-				)
-				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
-					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -4499,6 +4386,135 @@
 				)
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
 					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-Capacitor:C_Small")
+		(at 151.13 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2d5b87d-11a0-485f-9361-29ff6b2a08d1")
+		(property "Reference" "C3"
+			(at 153.67 100.3362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 153.67 102.8762 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
+			(at 152.0952 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf"
+			(at 152.4 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 151.13 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PROD_ID" "CAP-00000"
+			(at 151.13 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "1kV"
+			(at 153.67 105.4162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "100%"
+			(at 153.67 107.9562 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "d716fd5a-531b-460d-a60c-9a682cad33b5")
+		)
+		(pin "2"
+			(uuid "a203b8a5-06d9-46b2-a9d2-9245931e2d1a")
+		)
+		(instances
+			(project "MotherPCB"
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/11a41087-3c91-483c-9b84-9b4b390ea6bf"
+					(reference "C11")
+					(unit 1)
+				)
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/27f9d147-2e17-4c91-bb0b-5b3660accb5b"
+					(reference "C5")
+					(unit 1)
+				)
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/638d8cd3-11c9-4d95-b17c-c3d98881e4a8"
+					(reference "C15")
+					(unit 1)
+				)
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/ab19c645-77c1-4544-8825-cbc7c98c4ffe"
+					(reference "C20")
+					(unit 1)
+				)
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/c4c1973d-5436-4e7f-b95e-f77a4f16d85f"
+					(reference "C9")
+					(unit 1)
+				)
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/d5aabe29-28fd-420f-b684-c56313ee47f3"
+					(reference "C13")
+					(unit 1)
+				)
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/d8c339b8-6612-4b50-808d-148d2584ca02"
+					(reference "C17")
+					(unit 1)
+				)
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/da95a8c2-1e5d-4053-8fb4-7b6063b75ac8"
+					(reference "C3")
+					(unit 1)
+				)
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0/f64f5909-243c-44f4-8a0d-0b56181acb9e"
+					(reference "C7")
 					(unit 1)
 				)
 			)
