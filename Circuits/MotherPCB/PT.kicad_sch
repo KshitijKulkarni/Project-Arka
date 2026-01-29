@@ -825,6 +825,110 @@
 			(embedded_fonts no)
 		)
 	)
+	(no_connect
+		(at 118.11 119.38)
+		(uuid "03ebafdf-9f1a-4559-a730-a94834800adf")
+	)
+	(no_connect
+		(at 158.75 121.92)
+		(uuid "04b75cfa-e0d1-4cf5-8832-d384f9f03900")
+	)
+	(no_connect
+		(at 158.75 119.38)
+		(uuid "09c6c4b0-9f63-4c94-b43a-d0bd5dd98d44")
+	)
+	(no_connect
+		(at 158.75 96.52)
+		(uuid "0c78bdcb-9a07-46c8-9ea0-03ad8ccaf457")
+	)
+	(no_connect
+		(at 158.75 93.98)
+		(uuid "3a5652d9-ab94-4bdf-9a3d-6c94526f2f2a")
+	)
+	(no_connect
+		(at 158.75 78.74)
+		(uuid "3b484bbe-326a-48cc-a7a5-4bcb33f427ae")
+	)
+	(no_connect
+		(at 118.11 115.57)
+		(uuid "3c22de5f-8f82-45d2-be40-7fb61f052d73")
+	)
+	(no_connect
+		(at 158.75 99.06)
+		(uuid "4f902d0e-9d3d-45fa-ad2e-9471d5769cc7")
+	)
+	(no_connect
+		(at 158.75 88.9)
+		(uuid "56334ac5-7879-4e8c-8417-0ad965b495f9")
+	)
+	(no_connect
+		(at 118.11 95.25)
+		(uuid "5723092a-aaf3-4479-a4ac-4d14e34a1cc3")
+	)
+	(no_connect
+		(at 118.11 81.28)
+		(uuid "5eed44e0-285f-4016-9c3b-63443a56bf2b")
+	)
+	(no_connect
+		(at 118.11 101.6)
+		(uuid "5fadfcf8-9c60-4efe-b2e3-e3c5122996ec")
+	)
+	(no_connect
+		(at 118.11 99.06)
+		(uuid "6633c57e-1b68-4ace-8cba-a611f0b16bc5")
+	)
+	(no_connect
+		(at 158.75 91.44)
+		(uuid "681e9369-7a85-428b-8b79-530cd6e561fe")
+	)
+	(no_connect
+		(at 158.75 86.36)
+		(uuid "7eec89f7-492f-4eb5-9727-bd93ff4725ae")
+	)
+	(no_connect
+		(at 158.75 106.68)
+		(uuid "843a2163-7d44-4f5e-8003-1f882193cbd8")
+	)
+	(no_connect
+		(at 118.11 114.3)
+		(uuid "9bedef43-8b69-4787-8f20-2cca486f86b4")
+	)
+	(no_connect
+		(at 158.75 81.28)
+		(uuid "a4e2020d-aac7-431d-8214-0c2a8ee41264")
+	)
+	(no_connect
+		(at 118.11 83.82)
+		(uuid "b21eb3e5-bcb6-43ba-806f-7ba9e434bd2a")
+	)
+	(no_connect
+		(at 118.11 111.76)
+		(uuid "be352ce4-3f62-4008-80ee-eb7ee3de21db")
+	)
+	(no_connect
+		(at 158.75 101.6)
+		(uuid "c29fddc1-3adf-4127-bfc6-64e9334a1e83")
+	)
+	(no_connect
+		(at 158.75 104.14)
+		(uuid "cd6dad34-2cc0-447d-983d-2a343c09e921")
+	)
+	(no_connect
+		(at 118.11 78.74)
+		(uuid "d2532c8b-2d26-457a-a53b-f5407a0b5668")
+	)
+	(no_connect
+		(at 118.11 116.84)
+		(uuid "d945362a-363c-4472-b1c0-3b49d34a70dc")
+	)
+	(no_connect
+		(at 118.11 86.36)
+		(uuid "daec1c95-25d4-46fb-9665-09a8ee8a96b6")
+	)
+	(no_connect
+		(at 118.11 109.22)
+		(uuid "f6c2f354-e78d-4467-be51-541404d7b19a")
+	)
 	(hierarchical_label "5V_AVDD"
 		(shape input)
 		(at 133.35 68.58 90)

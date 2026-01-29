@@ -2806,6 +2806,10 @@
 		(uuid "501ad627-b83a-4a36-9d22-9111101f5515")
 	)
 	(no_connect
+		(at 179.07 49.53)
+		(uuid "50f98497-76a0-4925-b1a1-5f74aed0e3fe")
+	)
+	(no_connect
 		(at 231.14 120.65)
 		(uuid "56945d08-13f6-40c4-8ceb-5b1a68831405")
 	)
@@ -2828,10 +2832,6 @@
 	(no_connect
 		(at 190.5 118.11)
 		(uuid "672b1c17-d0eb-48ce-a362-5704aaede0d5")
-	)
-	(no_connect
-		(at 190.5 158.75)
-		(uuid "6e63c65b-72b7-4ffa-81d9-16ec414a060c")
 	)
 	(no_connect
 		(at 190.5 148.59)
@@ -3445,6 +3445,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 154.94) (xy 182.88 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1029a57-7d12-4a02-a938-126f1ca357b5")
+	)
+	(wire
+		(pts
 			(xy 44.45 101.6) (xy 46.99 101.6)
 		)
 		(stroke
@@ -3542,6 +3552,16 @@
 			(type default)
 		)
 		(uuid "e5ae61a8-347d-439d-a62e-52fc8662ce20")
+	)
+	(wire
+		(pts
+			(xy 182.88 158.75) (xy 190.5 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea405657-15d9-435f-a8b4-0df63527eb83")
 	)
 	(wire
 		(pts
@@ -5009,6 +5029,28 @@
 			)
 		)
 	)
+	(global_label "5V"
+		(shape input)
+		(at 227.33 34.29 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a0ffd1df-983a-463c-82ba-f90d33627d9b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 232.6133 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SCK_1"
 		(shape input)
 		(at 77.47 34.29 0)
@@ -5297,7 +5339,7 @@
 	)
 	(global_label "T_PULSE"
 		(shape output)
-		(at 252.73 140.97 180)
+		(at 252.73 144.78 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5307,7 +5349,7 @@
 		)
 		(uuid "b32325df-924a-4cc0-aad1-b299e3fa7990")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 241.8225 140.97 0)
+			(at 241.8225 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5823,28 +5865,6 @@
 			)
 		)
 	)
-	(global_label "3V3"
-		(shape input)
-		(at 269.24 143.51 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e7a11203-025d-4b1c-b7cc-6494edbefcc1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 275.7328 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "SCK_1"
 		(shape input)
 		(at 77.47 53.34 0)
@@ -6236,6 +6256,72 @@
 			(project ""
 				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5VA")
+		(at 182.88 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "53950a82-821f-4f26-aff2-ab95dfddda8e")
+		(property "Reference" "#PWR07"
+			(at 182.88 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5VA"
+			(at 182.88 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.88 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VA\""
+			(at 182.88 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f5046f46-60b2-47c2-99cf-73803f10c89d")
+		)
+		(instances
+			(project "MotherPCB"
+				(path "/ea485091-218e-4ddf-97d6-ebaac999a2f0"
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -7302,6 +7388,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "5V" input
+			(at 227.33 34.29 0)
+			(uuid "96a852dd-d0da-43f2-b75f-d2f94aeb72c1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -8659,16 +8755,6 @@
 				(justify left top)
 			)
 		)
-		(pin "PULSE" output
-			(at 252.73 140.97 180)
-			(uuid "43b1b7eb-9392-4335-809f-72f16ab0ac92")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "5V" input
 			(at 269.24 140.97 0)
 			(uuid "04a94985-0dc3-42d1-97f9-e8c9773f8896")
@@ -8689,14 +8775,14 @@
 				(justify right)
 			)
 		)
-		(pin "3V3" input
-			(at 269.24 143.51 0)
-			(uuid "af8d9e65-04ac-4dee-8e18-942227f2eaa9")
+		(pin "SIG" output
+			(at 252.73 144.78 180)
+			(uuid "fe175c87-4572-4cef-a2c2-363970de7346")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(instances
