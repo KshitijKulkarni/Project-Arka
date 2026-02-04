@@ -1,0 +1,30 @@
+Drill report for MotherPCB.kicad_pcb
+Created on 2026-02-04T13:35:47+0530
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  Front                     front
+    L2 :  Back                      back
+
+
+Drill file 'MotherPCB-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.300mm  0.0118"  (72 holes)
+    T2  0.700mm  0.0276"  (87 holes)
+    T3  0.750mm  0.0295"  (5 holes)
+    T4  0.762mm  0.0300"  (4 holes)
+    T5  0.800mm  0.0315"  (128 holes)
+    T6  0.900mm  0.0354"  (38 holes)
+    T7  1.000mm  0.0394"  (108 holes)
+    T8  2.300mm  0.0906"  (18 holes)
+    T9  4.550mm  0.1791"  (2 holes)
+
+    Total plated holes count 462
+
+
+Drill file 'MotherPCB-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

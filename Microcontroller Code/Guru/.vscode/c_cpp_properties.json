@@ -10,6 +10,8 @@
             "includePath": [
                 "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/src",
                 "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/Tachometer/src",
+                "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/PressureTransducer/src",
+                "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/ADS1263/src",
                 "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/FreeRTOS/src",
                 "C:/Users/Anubhav Shyjesh/.platformio/packages/framework-arduinoteensy/libraries/Wire",
                 "C:/Users/Anubhav Shyjesh/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility",
@@ -27,7 +29,6 @@
                 "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/ESPcomms/src",
                 "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/FlowSensor/src",
                 "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/FuelController/src",
-                "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/PressureTransducer/src",
                 "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/Thermocouple/src",
                 "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/ThrustSensor/src",
                 "C:/Users/Anubhav Shyjesh/.platformio/packages/framework-arduinoteensy/libraries/ADC",
@@ -131,6 +132,8 @@
                 "path": [
                     "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/src",
                     "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/Tachometer/src",
+                    "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/PressureTransducer/src",
+                    "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/ADS1263/src",
                     "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/FreeRTOS/src",
                     "C:/Users/Anubhav Shyjesh/.platformio/packages/framework-arduinoteensy/libraries/Wire",
                     "C:/Users/Anubhav Shyjesh/.platformio/packages/framework-arduinoteensy/libraries/Wire/utility",
@@ -148,7 +151,6 @@
                     "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/ESPcomms/src",
                     "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/FlowSensor/src",
                     "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/FuelController/src",
-                    "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/PressureTransducer/src",
                     "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/Thermocouple/src",
                     "D:/Documents/IITM/Project Arka/Code/Microcontroller Code/Guru/lib/ThrustSensor/src",
                     "C:/Users/Anubhav Shyjesh/.platformio/packages/framework-arduinoteensy/libraries/ADC",

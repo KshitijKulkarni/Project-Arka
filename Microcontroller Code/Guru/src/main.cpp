@@ -1,14 +1,23 @@
 #include <Arduino.h>
+#include <SPI.h>
 #include "FreeRTOS.h"
 #include "DataStructs.h"
 
 #include "EthernetComms.h"
 
 #include "Tachometer.h"
+#include "PressureTransducer.h"
 
-#define DAQ_TASK_COUNT 1
+#define DAQ_TASK_COUNT 2
 
-#define TACHOMETER_PIN 2
+#define TACHOMETER_PIN 38
+
+#define PRESSURE_TRANSDUCER_DRDY_PIN 42
+#define PRESSURE_TRANSDUCER_SCK_PIN 41
+#define PRESSURE_TRANSDUCER_CS_PIN 10
+#define PRESSURE_TRANSDUCER_MISO_PIN 39
+#define PRESSURE_TRANSDUCER_MOSI_PIN 40
+
 
 // Time slicing has been turned on for FreeRTOS in FreeRTOSConfig.h
 
@@ -17,39 +26,48 @@ uint16_t completionMask = (1 << DAQ_TASK_COUNT) - 1; // all DAQ tasks must compl
 
 /*
   Task 0: Tachometer Data Acquisition
+  Task 1: Pressure Transducer Data Acquisition
 */
 
 Gyan dataBuffer;
 SemaphoreHandle_t dataBufferMutex;
 
-// Sensor Objects
-Tachometer tachometer(0, &completionCount, &dataBuffer);
-
-int main(void) {
-  
-  dataBufferMutex = xSemaphoreCreateMutex();
-
-  // Attaching all interrupts
-  attachInterrupt(digitalPinToInterrupt(TACHOMETER_PIN), tachometerISR, arduino::RISING);
-
-  // Data Streaming tasks will start immediately
-  xTaskCreate(vTaskEthernet, "EthernetTask", 2048, NULL, 3, NULL);
-  xTaskCreate(vTaskTachometer, "TachometerTask", 2048, NULL, 3, NULL);
-
-  vTaskStartScheduler();
-
-  return 0;  
+// Interrupts
+void tachometerISR() {
+  Tachometer::pulseCount++;
 }
 
 // Sensor Data Acquisition Tasks
 static void vTaskTachometer(void *args) {
-
   while (1) {
-    // Tachometer data acquisition code here
-    tachometer.readRPM();
-    // Indicate task completion
+    // Tachometer data acquisition
+    Tachometer::readRPM();
+    
+    // Data written to Buffer
     if (xSemaphoreTake(dataBufferMutex, (TickType_t)10) == pdTRUE) {
-      tachometer.writeRPMtoBuffer();
+      Tachometer::writeRPMtoBuffer();
+      xSemaphoreGive(dataBufferMutex);
+    }
+  }
+}
+
+static void vTaskPressureTransducer(void *args) {
+  while (1) {
+    // Pressure Transducer data acquisition
+    static bool drdy = false;
+    static int sensorIndex = 5;
+
+    while(!drdy) {
+      sensorIndex = PressureTransducer::readPressure();
+      if (sensorIndex <= 0) {
+        // -1 comes only when a full cycle is completed
+        drdy = true;
+      }
+    }
+    
+    // Data written to Buffer
+    if (xSemaphoreTake(dataBufferMutex, (TickType_t)10) == pdTRUE) {
+      PressureTransducer::writePressureToBuffer();
       xSemaphoreGive(dataBufferMutex);
     }
   }
@@ -81,7 +99,26 @@ static void vTaskEthernet(void *args) {
   }
 }
 
-// Interrupts
-void tachometerISR() {
-  tachometer.pulseCount++;
+int main(void) {  
+  // Sensor Class Initializations
+  Tachometer::Begin(0, &completionCount, &dataBuffer);
+  PressureTransducer::Begin(&SPI1, 
+                            PRESSURE_TRANSDUCER_CS_PIN,
+                            1, 
+                            &completionCount, 
+                            &dataBuffer);
+
+  dataBufferMutex = xSemaphoreCreateMutex();
+
+  // Attaching all interrupts
+  attachInterrupt(digitalPinToInterrupt(TACHOMETER_PIN), tachometerISR, arduino::RISING);
+
+  // Data Streaming tasks will start immediately
+  xTaskCreate(vTaskEthernet, "EthernetTask", 2048, NULL, 5, NULL);
+  xTaskCreate(vTaskTachometer, "TachometerTask", 2048, NULL, 3, NULL);
+  xTaskCreate(vTaskPressureTransducer, "PTTask", 2048, NULL, 3, NULL);
+
+  vTaskStartScheduler();
+
+  return 0;  
 }

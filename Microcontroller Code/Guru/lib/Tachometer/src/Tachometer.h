@@ -6,20 +6,22 @@
 
 class Tachometer {
     public:
-        Tachometer(uint8_t commsID, uint16_t* taskCounter, Gyan* dataBuffer);
-        int readRPM();
-        int writeRPMtoBuffer();
+        static void Begin(uint8_t commsID, 
+                            uint16_t* taskCounter, 
+                            Gyan* dataBuffer);
+        static int readRPM();
+        static int writeRPMtoBuffer();
         
-        volatile uint32_t pulseCount = 0; //Will be updated by interrupt
+        static volatile uint32_t pulseCount; //Will be updated by interrupt
 
     private:
-        Gyan* _dataBuffer;
-        uint16_t* _taskCounter;
-        uint16_t _commsID;
+        static Gyan* _dataBuffer;
+        static uint16_t* _taskCounter;
+        static uint16_t _commsID;
 
-        uint32_t _interval;
-        uint8_t _rpm;
-        uint32_t _lastCallTime;
+        static uint32_t _interval;
+        static uint8_t _rpm;
+        static uint32_t _lastCallTime;
 };
 
 #endif

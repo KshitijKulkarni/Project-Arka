@@ -1,0 +1,12 @@
+Plotted to 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-Front.gbr'.
+Plotted to 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-Back.gbr'.
+Plotted to 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-F_Paste.gbr'.
+Plotted to 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-B_Paste.gbr'.
+Plotted to 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-F_Mask.gbr'.
+Plotted to 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-B_Mask.gbr'.
+Plotted to 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\akkia\Downloads\Arka_PCB\Project-Arka\Circuits\MotherPCB\MotherPCB-job.gbrjob'.
+Info: Done.
+Info: Done.

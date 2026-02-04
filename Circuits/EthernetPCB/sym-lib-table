@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "MagJack")(type "KiCad")(uri "${KIPRJMOD}/MagJack.kicad_sym")(options "")(descr ""))
+)

@@ -8,11 +8,24 @@
   pulseCount must be modified by hardware interrupts, and readRPM is called when required.
 */
 
-Tachometer::Tachometer(uint8_t commsID, uint16_t* taskCounter, Gyan* dataBuffer) 
-    : _dataBuffer(dataBuffer), _taskCounter(taskCounter) {
-    _commsID = (1u << commsID);
-    pulseCount = 0;
-    _lastCallTime = millis();
+Gyan* Tachometer::_dataBuffer = nullptr;
+uint16_t* Tachometer::_taskCounter = nullptr;
+uint16_t  Tachometer::_commsID = 0;
+
+uint32_t Tachometer::_interval = 0;
+uint8_t Tachometer::_rpm = 0;
+uint32_t Tachometer::_lastCallTime = 0;
+
+volatile uint32_t Tachometer::pulseCount = 0;
+
+void Tachometer::Begin(uint8_t commsID, 
+                        uint16_t* taskCounter, 
+                        Gyan* dataBuffer) {
+  _dataBuffer = dataBuffer;
+  _taskCounter = taskCounter;
+  _commsID = (1u << commsID);
+  pulseCount = 0;
+  _lastCallTime = millis();
 }
 
 int Tachometer::readRPM() {
@@ -27,6 +40,6 @@ int Tachometer::readRPM() {
 
 int Tachometer::writeRPMtoBuffer() {
   _dataBuffer->rpm = _rpm;
-  (*_taskCounter) |= _commsID; // Indicate task completion
+  (*_taskCounter) |= (1 << _commsID); // Indicate task completion
   return 0;
 }

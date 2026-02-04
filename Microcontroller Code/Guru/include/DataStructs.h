@@ -19,10 +19,10 @@ struct Gyan {
     uint32_t thrust; //id - 0xB0
     uint8_t currFlow; //id - 0xC0
     uint8_t setFlow;
-    uint16_t pressure[4]; //id - 0xD0
+    int32_t pressure[4]; //id - 0xD0
     uint32_t temperature[9]; //id - 0xE0
     uint8_t status;
-    // Total 46 bytes
+    // Total 54 bytes
 };
 
 struct Directive {
