@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Additional Components")(type "KiCad")(uri "D:/Documents/IITM/Project Arka/Code/Circuits/MotherPCB/Project Libaray/Additional_Components.pretty")(options "")(descr ""))
+)
