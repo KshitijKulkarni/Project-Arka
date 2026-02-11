@@ -17,12 +17,12 @@ struct Gyan {
     uint64_t timestamp;
     uint8_t rpm; //id - 0xA0
     uint32_t thrust; //id - 0xB0
-    uint8_t currFlow; //id - 0xC0
-    uint8_t setFlow;
+    uint64_t currFlow; //id - 0xC0
+    uint64_t setFlow;
     int32_t pressure[4]; //id - 0xD0
     uint32_t temperature[9]; //id - 0xE0
     uint8_t status;
-    // Total 54 bytes
+    // Total 82 bytes
 };
 
 struct Directive {

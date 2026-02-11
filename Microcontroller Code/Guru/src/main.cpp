@@ -5,12 +5,14 @@
 
 #include "EthernetComms.h"
 
-#include "Tachometer.h"
+#include "FlowSensor.h"
+#include "LoadCell.h"
 #include "PressureTransducer.h"
+#include "Tachometer.h"
+#include "Thermocouple.h"
 
-#define DAQ_TASK_COUNT 2
 
-#define TACHOMETER_PIN 38
+#define DAQ_TASK_COUNT 5
 
 #define PRESSURE_TRANSDUCER_DRDY_PIN 42
 #define PRESSURE_TRANSDUCER_SCK_PIN 41
@@ -18,8 +20,15 @@
 #define PRESSURE_TRANSDUCER_MISO_PIN 39
 #define PRESSURE_TRANSDUCER_MOSI_PIN 40
 
+#define TACHOMETER_PIN 38
+
 
 // Time slicing has been turned on for FreeRTOS in FreeRTOSConfig.h
+
+/*
+  Only headers have been written for the following:
+    1. Load Cell (library used: https://github.com/olkal/HX711_ADC)
+*/
 
 uint16_t completionCount = 0;
 uint16_t completionMask = (1 << DAQ_TASK_COUNT) - 1; // all DAQ tasks must complete
