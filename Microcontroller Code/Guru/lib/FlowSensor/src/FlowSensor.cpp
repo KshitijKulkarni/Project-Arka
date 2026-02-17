@@ -32,10 +32,10 @@ int FlowSensor::calcFlowrate() {
     if (_drdy) {
         FlowSensor::_interval = (*FlowSensor::_head - *FlowSensor::_tail)/BUFFER_SIZE;
         FlowSensor::_flowRate = FlowSensor::_conversionFactor / FlowSensor::_interval;
-        return 0;
+        return _flowRate;
     }
     else {
-        return 1;
+        return -1;
     }
 }
 

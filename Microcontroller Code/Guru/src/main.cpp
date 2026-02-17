@@ -5,14 +5,21 @@
 
 #include "EthernetComms.h"
 
+#include "FuelController.h"
+
 #include "FlowSensor.h"
 #include "LoadCell.h"
 #include "PressureTransducer.h"
 #include "Tachometer.h"
 #include "Thermocouple.h"
 
+#define FUEL_STEPPER_EN_PIN 21
+#define FUEL_STEPPER_DIR_PIN 22
+#define FUEL_STEPPER_STP_PIN 23
 
 #define DAQ_TASK_COUNT 5
+
+#define FLOW_SENSOR_PIN 41
 
 #define PRESSURE_TRANSDUCER_DRDY_PIN 42
 #define PRESSURE_TRANSDUCER_SCK_PIN 41
@@ -30,6 +37,13 @@
     1. Load Cell (library used: https://github.com/olkal/HX711_ADC)
 */
 
+/*
+  Major To-do List:
+    1. Fix ESPComms and add i2c interrupt
+    2. list i2c interrupt to the newTarget function in the FuelController class
+    3. Add PID tuning function in FuelController class and call it from main.cpp
+*/
+
 uint16_t completionCount = 0;
 uint16_t completionMask = (1 << DAQ_TASK_COUNT) - 1; // all DAQ tasks must complete
 
@@ -41,10 +55,48 @@ uint16_t completionMask = (1 << DAQ_TASK_COUNT) - 1; // all DAQ tasks must compl
 Gyan dataBuffer;
 SemaphoreHandle_t dataBufferMutex;
 
+TaskHandle_t tachometerTaskHandle = NULL; //Unused
+TaskHandle_t FuelSensorTaskHandle = NULL;
+TaskHandle_t PIDComputeTaskHandle = NULL;
+TaskHandle_t FuelStepperControlTaskHandle = NULL;
+TaskHandle_t EthernetTaskHandle = NULL;
+
 // Interrupts
 void tachometerISR() {
   Tachometer::pulseCount++;
 }
+
+void fuelSensorISR() {
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  vTaskNotifyGiveFromISR(FuelSensorTaskHandle, 
+                        &xHigherPriorityTaskWoken);
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+
+// Tasks triggered by ISR
+static void vTaskFuelSensor(void *args) {
+  static double flowrate = 0.0;
+  
+  while (1) {
+    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+
+    FlowSensor::interruptCallback();
+
+    flowrate = FlowSensor::calcFlowrate();
+    if (flowrate >= 0) {
+      if (xSemaphoreTake(dataBufferMutex, (TickType_t)10) == pdTRUE) {
+        FlowSensor::writeFlowrateToBuffer();
+        xSemaphoreGive(dataBufferMutex);
+
+        // Notify PID task
+        FuelController::notifyNewSensorValue(flowrate);
+        xTaskNotifyGive(PIDComputeTaskHandle);
+      }
+    }
+  }
+}
+
 
 // Sensor Data Acquisition Tasks
 static void vTaskTachometer(void *args) {
@@ -82,6 +134,29 @@ static void vTaskPressureTransducer(void *args) {
   }
 }
 
+
+// PID Task for fuel control
+static void vTaskPIDCompute(void *args) {
+  while (1) {
+    // Wait for notification from sensor tasks
+    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+
+    // Compute PID
+    FuelController::computePID();
+
+    // Notify stepper control task
+    xTaskNotifyGive(FuelStepperControlTaskHandle);
+  }
+}
+
+static void vTaskFuelStepperControl(void *args) {
+  while (1) {
+    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+    FuelController::updateStepper();
+  }
+}
+
+
 // Ethernet Communication Task
 static void vTaskEthernet(void *args) {
   static EthComms ethComms(&dataBuffer,
@@ -108,6 +183,7 @@ static void vTaskEthernet(void *args) {
   }
 }
 
+
 int main(void) {  
   // Sensor Class Initializations
   Tachometer::Begin(0, &completionCount, &dataBuffer);
@@ -116,16 +192,26 @@ int main(void) {
                             1, 
                             &completionCount, 
                             &dataBuffer);
+  FlowSensor::Begin(2, &completionCount, &dataBuffer);
+
+  // Fuel Controller Initialization
+  FuelController::Begin(FUEL_STEPPER_EN_PIN, 
+                        FUEL_STEPPER_DIR_PIN, 
+                        FUEL_STEPPER_STP_PIN);
 
   dataBufferMutex = xSemaphoreCreateMutex();
 
-  // Attaching all interrupts
-  attachInterrupt(digitalPinToInterrupt(TACHOMETER_PIN), tachometerISR, arduino::RISING);
-
   // Data Streaming tasks will start immediately
-  xTaskCreate(vTaskEthernet, "EthernetTask", 2048, NULL, 5, NULL);
   xTaskCreate(vTaskTachometer, "TachometerTask", 2048, NULL, 3, NULL);
   xTaskCreate(vTaskPressureTransducer, "PTTask", 2048, NULL, 3, NULL);
+  xTaskCreate(vTaskFuelSensor, "FuelSensorTask", 2048, NULL, 4, &FuelSensorTaskHandle);
+  xTaskCreate(vTaskEthernet, "EthernetTask", 2048, NULL, 5, NULL);
+  xTaskCreate(vTaskPIDCompute, "PIDComputeTask", 2048, NULL, 6, &PIDComputeTaskHandle);
+  xTaskCreate(vTaskFuelStepperControl, "FuelStepperControlTask", 2048, NULL, 6, &FuelStepperControlTaskHandle);
+
+  // Attaching all interrupts
+  attachInterrupt(digitalPinToInterrupt(TACHOMETER_PIN), tachometerISR, arduino::RISING);
+  attachInterrupt(digitalPinToInterrupt(FLOW_SENSOR_PIN), fuelSensorISR, arduino::RISING);
 
   vTaskStartScheduler();
 
