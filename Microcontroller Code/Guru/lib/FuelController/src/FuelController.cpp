@@ -32,10 +32,6 @@ void FuelController::Begin(uint8_t enPin, uint8_t dirPin, uint8_t stpPin) {
     pinMode(FuelController::_dirPin, OUTPUT);
     pinMode(FuelController::_stpPin, OUTPUT);
 
-    digitalWrite(FuelController::_enPin, LOW);
-    digitalWrite(FuelController::_dirPin, LOW);
-    digitalWrite(FuelController::_stpPin, LOW);
-
     FuelController::_pid = new PID(&FuelController::_currentFlow, 
                                   &FuelController::_stepperTarget, 
                                   &FuelController::_targetFlow,
@@ -44,10 +40,18 @@ void FuelController::Begin(uint8_t enPin, uint8_t dirPin, uint8_t stpPin) {
                                   FuelController::kd,
                                   DIRECT);
     
-    FuelController::_pid->SetOutputLimits(0, STEPPER_LIMIT);
+    FuelController::_pid->SetOutputLimits(0, STEPPER_POSITION_LIMIT);
     FuelController::_pid->SetMode(AUTOMATIC);
     FuelController::_pid->SetSampleTime(10);
 
+    FuelController::_stepper = new AccelStepper(AccelStepper::FULL2WIRE,
+                                                FuelController::_stpPin, 
+                                                FuelController::_dirPin);
+
+    FuelController::_stepper->setEnablePin(FuelController::_enPin);
+    FuelController::_stepper->enableOutputs();
+    FuelController::_stepper->setMaxSpeed(STEPPER_SPEED_LIMIT);
+    FuelController::_stepper->setAcceleration(STEPPER_ACCELERATION_LIMIT);
 }
 
 void FuelController::notifyNewTarget(double target) {
@@ -65,9 +69,12 @@ void FuelController::computePID() {
         FuelController::_pid->Compute();
         FuelController::_newSensorValue = false;
         FuelController::_newTarget = false;
+
+        FuelController::_stepper->moveTo((int)FuelController::_stepperTarget);
     }
 }
 
-void FuelController::updateStepper() {
-    return;
+void FuelController::runStepper() {
+    while (FuelController::_stepper->distanceToGo() != 0) 
+            FuelController::_stepper->run();
 }

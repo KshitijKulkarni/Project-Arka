@@ -152,7 +152,7 @@ static void vTaskPIDCompute(void *args) {
 static void vTaskFuelStepperControl(void *args) {
   while (1) {
     ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-    FuelController::updateStepper();
+    FuelController::runStepper();
   }
 }
 

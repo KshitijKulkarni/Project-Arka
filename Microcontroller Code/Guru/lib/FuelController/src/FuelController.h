@@ -7,7 +7,9 @@
 
 #include "DataStructs.h"
 
-#define STEPPER_LIMIT 10000
+#define STEPPER_POSITION_LIMIT 10000
+#define STEPPER_SPEED_LIMIT 1000
+#define STEPPER_ACCELERATION_LIMIT 500
 
 class FuelController {
     public:
@@ -16,7 +18,7 @@ class FuelController {
         static void tunePID();
         static void computePID();
 
-        static void updateStepper();
+        static void runStepper();
 
         static void notifyNewTarget(double target);
         static void notifyNewSensorValue(double current);
@@ -31,6 +33,7 @@ class FuelController {
         static bool _newTarget;
 
         static PID* _pid;
+        static AccelStepper* _stepper;
 
         static double kp;
         static double ki;
