@@ -5,6 +5,8 @@
 
 #include "EthernetComms.h"
 
+#include "StarterMotor.h"
+
 #include "FuelController.h"
 
 #include "FlowSensor.h"
@@ -12,6 +14,8 @@
 #include "PressureTransducer.h"
 #include "Tachometer.h"
 #include "Thermocouple.h"
+
+#define STARTER_MOTOR_PWM_PIN 14
 
 #define FUEL_STEPPER_EN_PIN 21
 #define FUEL_STEPPER_DIR_PIN 22
@@ -29,6 +33,15 @@
 
 #define TACHOMETER_PIN 38
 
+uint8_t engineStatus = 0;
+/*
+  Status Bit Mapping:
+    -1: Error State
+    0 : Engine Off
+    1 : Engine Startup
+    2 : Engine Running
+    3 : Engine Shutdown
+*/
 
 // Time slicing has been turned on for FreeRTOS in FreeRTOSConfig.h
 
@@ -40,8 +53,7 @@
 /*
   Major To-do List:
     1. Fix ESPComms and add i2c interrupt
-    2. list i2c interrupt to the newTarget function in the FuelController class
-    3. Add PID tuning function in FuelController class and call it from main.cpp
+    2. Add PID tuning function in FuelController class and call it from main.cpp
 */
 
 uint16_t completionCount = 0;
@@ -97,6 +109,51 @@ static void vTaskFuelSensor(void *args) {
   }
 }
 
+
+// Control Sequence Tasks
+static void vTaskStateMonitor(void *args) {
+  while (1) {
+    // Monitor engine status and update engineStatus variable
+    // This is a placeholder for actual logic to determine engine status
+    // For example, it could be based on RPM, flowrate, or other sensor data
+
+    vTaskDelay(pdMS_TO_TICKS(1000)); // Check every second
+  }
+}
+
+static void vTaskStateStartup(void *args) {
+  while (1) {
+    
+    vTaskDelay(pdMS_TO_TICKS(100)); // Check every 100 ms
+  }
+}
+
+static void vTaskStateRunning(void *args) {
+  while (1) {
+    // Main control loop for engine running state
+    // This could involve adjusting fuel flow based on sensor data and PID output
+
+    vTaskDelay(pdMS_TO_TICKS(100)); // Loop every 100 ms
+  }
+}
+
+static void vTaskStateShutdown(void *args) {
+  while (1) {
+    // Control sequence for engine shutdown
+    // This could involve cutting off fuel flow and ensuring safe shutdown
+
+    vTaskDelay(pdMS_TO_TICKS(100)); // Check every 100 ms
+  }
+}
+
+static void vTaskStateEmergency(void *args) {
+  while (1) {
+    // Emergency handling task
+    // This could involve cutting off fuel flow and activating safety measures
+
+    vTaskDelay(pdMS_TO_TICKS(100)); // Check every 100 ms
+  }
+}
 
 // Sensor Data Acquisition Tasks
 static void vTaskTachometer(void *args) {
