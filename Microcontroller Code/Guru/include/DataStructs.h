@@ -31,8 +31,15 @@ struct Directive {
     // Total 3 bytes
 };
 
+struct TargetState {
+    uint8_t state;
+    uint16_t targetFlow;
+};
+
+/*
 struct LogStruct {
     
 };
+*/
 
 #endif
